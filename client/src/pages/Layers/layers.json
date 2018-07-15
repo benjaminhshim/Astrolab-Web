@@ -1,0 +1,41 @@
+[
+    {
+        "title": "Bars",
+        "icon": "/assets/images/AstrolabIconImages/Bars.png"
+    },
+    {
+        "title": "Cafés",
+        "icon": "../../assets/images/AstrolabIconImages/Cafe.png"
+
+    },
+    {
+        "title": "General",
+        "icon": "../../assets/images/AstrolabIconImages/General.png"
+    },
+    {
+        "title": "Home + Garden",
+        "icon": "../../assets/images/AstrolabIconImages/Hammer.png"
+    },
+    {
+        "title": "Landmarks",
+        "icon": "../../assets/images/AstrolabIconImages/Landmark.png"
+    },
+    {
+        "title": "Nature",
+        "icon": "../../assets/images/AstrolabIconImages/MtnFlag.png"
+    },
+    {
+        "title": "Nightlife",
+        "icon": "../../assets/images/AstrolabIconImages/Disco.png"
+    },
+    {
+        "title": "Restaurants",
+        "icon": "../../assets/images/AstrolabIconImages/Fork.png"
+    },
+    {
+        "title": "Retail",
+        "icon": "../../assets/images/AstrolabIconImages/Retail.png"
+    }
+]
+
+

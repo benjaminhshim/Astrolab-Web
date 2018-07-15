@@ -3,4 +3,21 @@
     height: 100vh;
     background: #4C2089;
     color: #FFFFFE;
+    font-family: Futura;
 }
+
+#layers-header {
+    font-family: Futura;
+    font-size: 24px;
+    letter-spacing: 2px;
+    margin-top: 50px;
+}
+
+#layers-subheader {
+    margin-top: -10px;
+}
+
+/* .layers-body main {
+    border: 1px solid white;
+    padding: 20px;
+} */
