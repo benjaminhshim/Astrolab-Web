@@ -35,6 +35,10 @@
     {
         "title": "Retail",
         "icon": "../../assets/images/AstrolabIconImages/Retail.png"
+    },
+    {
+        "title": "Transportation",
+        "icon": "../../assets/images/AstrolabIconImages/Transpo.png"
     }
 ]
 

@@ -3,4 +3,90 @@
     height: 100vh;
     background: #45924C;
     color: #FFFFFE;
+    font-family: Futura;
+}
+
+
+#explore-header {
+    font-family: Futura;
+    font-size: 24px;
+    letter-spacing: 1px;
+    margin-top: 50px;
+}
+
+#explore-search,
+#explore-location {
+    background: transparent;
+    color: #FFFFFE;
+}
+
+#explore-search:focus,
+#explore-location:focus {
+    outline: none;
+}
+
+::placeholder {
+    color: #FFFFFE;
+}
+
+#explore-filter {
+    right: 17.5em;
+}
+
+/* MODAL */
+.modal {
+    font-family: Futura;
+    color: #FFFFFE;
+}
+
+.modal-content {
+    background: #45924C !important;
+    border: 1px solid #FFFFFE !important;
+    border-radius: 10px !important;
+    box-shadow: 0px 1px 3px 1px darkgray !important;
+}
+
+.modal-title {
+    margin: 0 auto;
+}
+
+#explore-filter-active {
+    right: -0.2em;
+    top: -0.2em;
+}
+
+#explore-slider {
+    top: 3rem;
+    right: 12rem;
+}
+
+#explore-distance {
+    top: 3rem;
+    right: 3rem;
+}
+
+#explore-btn-abc,
+#explore-btn-closest {
+    border-radius: 10px;
+    background: transparent;
+    border: 1px solid #FFFFFE;
+    color: #FFFFFE;
+    margin-right: 10px;
+}
+
+.explore-layers-btn {
+    border-radius: 10px;
+    background: rgb(104, 172, 111);
+    color: #FFFFFE;
+    margin: 5px;
+    padding: 8px;
+    border: none;
+    font-size: 14px;
+}
+
+#explore-btn-abc:focus,
+#explore-btn-closest:focus,
+.explore-layers-btn:focus {
+    text-decoration: none;
+    outline: none;
 }

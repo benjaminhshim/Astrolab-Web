@@ -9,3 +9,12 @@ nav {
     color: #FFFFFE;
 }
 
+.nav-item:hover {
+    text-decoration: none;
+    color: #fffffe;
+}
+
+.nav-item:active {
+    color: #fffffe;
+    outline: none;
+}
