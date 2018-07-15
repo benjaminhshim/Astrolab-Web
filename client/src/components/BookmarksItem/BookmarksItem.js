@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 
-class ExploreItem extends Component {
+class BookmarksItem extends Component {
     render() {
         return (
-            <article className="dt w-100 b--black-05 pb2 mt3 explore-item" href="#0">
+            <article className="dt w-100 b--black-05 pb2 mt3 bookmarks-item" href="#0">
 
                 <div className="dtc v-mid pl3">
                     <h1 className="f6 f5-ns fw6 lh-title mv0">{this.props.name} </h1>
@@ -18,4 +18,4 @@ class ExploreItem extends Component {
     }
 }
 
-export default ExploreItem;
+export default BookmarksItem;

@@ -1,0 +1,24 @@
+[
+    {
+        "name": "Alfred Coffee",
+        "icon": "/assets/images/AstrolabIconImages/Cafe.png"
+    },
+    {
+        "name": "A.P.C.",
+        "icon": "../../assets/images/AstrolabIconImages/Retail.png"
+    },
+    {
+        "name": "Balmain",
+        "icon": "../../assets/images/AstrolabIconImages/Retail.png"
+    },
+    {
+        "name": "Glossier LA",
+        "icon": "../../assets/images/AstrolabIconImages/Retail.png"
+    },
+    {
+        "name": "Marc Jacobs",
+        "icon": "../../assets/images/AstrolabIconImages/Retail.png"
+    }
+]
+
+

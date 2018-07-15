@@ -112,7 +112,6 @@ class Explore extends Component {
                             value={this.state.search}
                             name="search"
                             onChange={this.handleInputChange} />
-                        <br />
                         <input 
                             id="explore-location" 
                             className="input-reset ba b--white pa2 mb2 db w-100 br3" type="text" 
