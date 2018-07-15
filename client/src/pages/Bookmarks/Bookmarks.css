@@ -3,4 +3,15 @@
     height: 100vh;
     background: #D69648;
     color: #FFFFFE;
+    font-family: Futura;
+}
+
+#bookmarks-search {
+    background: transparent;
+    color: #FFFFFE;
+    margin-top: -15px;
+}
+
+#bookmarks-search:focus {
+    outline: none;
 }
