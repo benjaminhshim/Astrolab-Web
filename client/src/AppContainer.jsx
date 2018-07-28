@@ -30,35 +30,35 @@ class AppContainer extends Component {
 
   render() {
     return (
-        <Router>
-            <div>
-                <Route 
-                    exact path="/"                 
-                    render={props => <Home {...props} googleMapsResult={this.state.searchResults} googleMapsLocation={this.state.locationResults}/>}
-                    />
-                <Route 
-                    path="/layers" 
-                    component={Layers} />
-                <Route 
-                    path="/explore" 
-                    render={props => <Explore {...props} onSearchLocation={this.searchLocation}/>}
-                    />
-                <Route 
-                    path="/bookmarks" 
-                    component={Bookmarks} />
-                <Route 
-                    path="/profile" 
-                    component={Profile} />
-                <Route 
-                    path="/landing-page" 
-                    component={LandingPage} />
-                <Route 
-                    path="/sign-up" 
-                    component={SignUp} />
-                <Route 
-                    path="/log-in" 
-                    component={LogIn} />
-            </div>
+      <Router>
+        <div>
+            <Route 
+                exact path="/"                 
+                render={props => <Home {...props} googleMapsResult={this.state.searchResults} googleMapsLocation={this.state.locationResults}/>}
+                 />
+            <Route 
+                path="/layers" 
+                component={Layers} />
+            <Route 
+                path="/explore" 
+                render={props => <Explore {...props} onSearchLocation={this.searchLocation}/>}
+                />
+            <Route 
+                path="/bookmarks" 
+                component={Bookmarks} />
+            <Route 
+                path="/profile" 
+                component={Profile} />
+            <Route 
+                path="/landing-page" 
+                component={LandingPage} />
+            <Route 
+                path="/sign-up" 
+                component={SignUp} />
+            <Route 
+                path="/log-in" 
+                component={LogIn} />
+        </div>
         </Router>
     )
   }
