@@ -10,7 +10,7 @@ class LayersItem extends Component {
                 </div>
 
                 <div className="dtc v-mid pl3">
-                    <h1 className="f6 f5-ns fw6 lh-title mv0">{this.props.title} </h1>
+                    <h1 className="f6 f5-ns lh-title mv0">{this.props.title} </h1>
                 </div>
 
                 <div className="dtc v-mid tr">
