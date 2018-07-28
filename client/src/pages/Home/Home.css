@@ -4,3 +4,11 @@
     background: #537AA5;
     color: #FFFFFE;
 }
+
+
+#home-header {
+    font-family: Futura;
+    font-size: 24px;
+    letter-spacing: 1px;
+    margin-top: 50px;
+}

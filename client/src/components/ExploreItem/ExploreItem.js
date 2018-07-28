@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import './ExploreItem.css';
 
 class ExploreItem extends Component {
     render() {
@@ -6,7 +7,7 @@ class ExploreItem extends Component {
             <article className="dt w-100 b--black-05 pb2 mt3 explore-item" href="#0">
 
                 <div className="dtc v-mid pl3">
-                    <h1 className="f6 f5-ns fw6 lh-title mv0">{this.props.name} </h1>
+                    <h1 className="f6 f5-ns lh-title mv0">{this.props.name} </h1>
                 </div>
 
                 <div className="dtc v-mid tr">
