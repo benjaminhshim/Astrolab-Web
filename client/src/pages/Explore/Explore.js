@@ -49,7 +49,7 @@ class Explore extends Component {
             <div className="explore-body">
                 <Nav />
                 <div className="relative">
-                    <p className="tc" id="explore-header">Explore</p>
+                    <p className="tc" id="explore-header">Search</p>
                     <img  
                         src='/assets/images/AstrolabIconImages/FilterMapImg.png'
                         id="explore-filter"

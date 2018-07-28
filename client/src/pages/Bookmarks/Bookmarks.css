@@ -1,7 +1,9 @@
 .bookmarks-body {
     height: 100%;
     height: 100vh;
-    background: #D69648;
+    /* background: #D69648; */
+    background: linear-gradient(to bottom right, #1EA364, #0F5D38);
+
     color: #FFFFFE;
     font-family: Futura;
 }

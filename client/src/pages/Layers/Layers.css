@@ -1,7 +1,9 @@
 .layers-body {
     height: 100%;
     height: 100vh;
-    background: #4C2089;
+    /* background: #4C2089; */
+    background: linear-gradient(to bottom right, #440F7F, #300066);
+    opacity: 85%;
     color: #FFFFFE;
     font-family: Futura;
 }
