@@ -1,0 +1,28 @@
+.landing-page-body {
+    background: linear-gradient(to bottom right, #1EA364, #0F5D38);
+    height: 100vh;
+    padding-top: 150px;
+}
+
+#astrolab-logo {
+    margin: 0 auto;
+    display: block;
+}
+
+#landing-page-header {
+    color: #FFFFFE;
+    margin-top: 20px;
+    letter-spacing: 1px;
+    font-family: "Futura";
+}
+
+#landing-page-buttons {
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    width: 20%;
+    clear: both;
+    overflow: auto;
+    margin-top: 40px;
+    height: 50px;
+}

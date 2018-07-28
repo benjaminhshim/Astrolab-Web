@@ -24,7 +24,7 @@ class Bookmarks extends Component {
             <div className="bookmarks-body">
                 <Nav />
                 <div className="relative">
-                    <p className="tc" id="explore-header">Bookmarks</p>
+                    <p className="tc" id="explore-header">Saved</p>
                     <img  
                         src='/assets/images/AstrolabIconImages/BookmarksEditResting.png'
                         id="explore-filter"
