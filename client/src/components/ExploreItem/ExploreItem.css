@@ -1,0 +1,26 @@
+@font-face {
+    font-family: 'Futura-PT-Book';
+    font-style: normal;
+    font-weight: 0;
+    src:
+      local('futura-pt-book'),
+      url(../../assets/fonts/futura-pt-book.ttf) 
+      format('truetype'),
+}
+
+@font-face {
+    font-family: 'Titling';
+    font-style: normal;
+    font-weight: 0;
+    src:
+      local('built-titling-bd-it'),
+      url(../../assets/fonts/built-titling-bd-it.ttf) 
+      format('truetype'),
+}
+
+
+
+
+h1 {
+    font-family: 'Titling', !important;
+}

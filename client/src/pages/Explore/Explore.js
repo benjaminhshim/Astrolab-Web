@@ -6,7 +6,7 @@ import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import ExploreItem from '../../components/ExploreItem';
 import layersList from '../Layers/layers.json';
 import exploreList from '../Explore/explore.json';
-
+import axios from 'axios';
 
 class Explore extends Component {
     
@@ -15,7 +15,8 @@ class Explore extends Component {
         location: '',
         modal: false,
         layersList,
-        exploreList
+        exploreList,
+        results: []
     }
 
     
@@ -28,6 +29,19 @@ class Explore extends Component {
 
     toggleModal = () => {
         this.setState({ modal: !this.state.modal })
+    }
+
+    // searchMovie = movie => {
+    //     axios.get(`https://api.giphy.com/v1/gifs/search?q=${movie}&api_key=dc6zaTOxFJmzC&limit=1`)
+    //     .then(res => this.setState({results: res.data.data[0].title}))
+    //     .catch(err => console.log(err));
+    // }
+
+    onSearchLocation = (event, search, location) => {
+        event.preventDefault();
+        console.log('test');
+        this.setState({search: '', location: ''});
+        this.props.onSearchLocation(search, location);
     }
 
     render() {
@@ -100,9 +114,10 @@ class Explore extends Component {
                     </Modal>
                 </div>
 
-
-
-                <form className="pa4 black-80">
+                <form 
+                    className="pa4 black-80" 
+                    onSubmit={event => this.onSearchLocation(event, this.state.search, this.state.location)}
+                    >
                     <div className="measure center">
                         <input 
                             id="explore-search" 
@@ -114,12 +129,14 @@ class Explore extends Component {
                             onChange={this.handleInputChange} />
                         <input 
                             id="explore-location" 
-                            className="input-reset ba b--white pa2 mb2 db w-100 br3" type="text" 
+                            className="input-reset ba b--white pa2 mb2 db w-100 br3" 
+                            type="text" 
                             placeholder="Current Location" 
                             value={this.state.location}
                             name="location"
                             onChange={this.handleInputChange} />
                     </div>
+                    <button style={{visibility: "hidden"}}>submit</button>
                 </form>
 
                 <div>
@@ -133,10 +150,13 @@ class Explore extends Component {
 
                     </main>
                 </div>
+
+                <div>{this.state.results}</div>
             </div>
         )
     }
 }
+
 
 
 export default Explore;
