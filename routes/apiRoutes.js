@@ -2,7 +2,7 @@
 const router = require("express").Router();
 const yelp = require('yelp-fusion');
 const apiKey = 'tjWeCYoOxLdJP26PTWIdR0ww5r4Wyw0iI93pvORu_2o_j2pJBPAGZBpWFAPSfolo1WYhug7az9S78WiCKL5T9neJIUnRYmADfu6wsRdTRxPvz3BvJJqzwSAqDYy8WnYx';
-const locationsController = require("../controllers/locationsController");
+const bookmarksController = require("../controllers/bookmarksController");
 const path = require("path");
 
 // let searchRequest = {
@@ -43,15 +43,15 @@ router.get('/reviews', (req, res) => {
 
  // Matches with "/api/location"
 router.route("/")
-.get(locationsController.findAll)
-.post(locationsController.create);
+.get(bookmarksController.findAll)
+.post(bookmarksController.create);
 
 // Matches with "/api/books/:id"
 router
 .route("/:id")
-.get(locationsController.findById)
-.put(locationsController.update)
-.delete(locationsController.remove);
+.get(bookmarksController.findById)
+.put(bookmarksController.update)
+.delete(bookmarksController.remove);
 
 // Send every request to the React app
 // Define any API routes before this runs
