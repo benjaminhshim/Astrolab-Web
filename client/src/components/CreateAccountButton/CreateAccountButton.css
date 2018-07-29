@@ -1,0 +1,15 @@
+#create-account-btn {
+    color: #1a8451;
+    font-family: "Futura";
+    box-shadow: 0 2px 6px -1px black;
+
+}
+
+#create-account-btn:hover {
+    cursor: pointer;
+}
+
+
+#create-account-btn:focus {
+    outline: none;
+}
