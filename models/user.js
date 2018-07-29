@@ -1,30 +1,41 @@
 const mongoose = require("mongoose");
-var bcrypt   = require('bcrypt-nodejs');
+// var bcrypt   = require('bcrypt-nodejs'); - for auth use
 
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
-  firstname: { type: String, required: true },
-  lastname: { type: String, required: true },
+    firstname: {
+        type: String,
+        required: true
+    },
+    lastname: {
+        type: String,
+        required: true
+    },
 
-  username: {
-    type: String,
-    min: [1, 'Too few characters'],
-    max: 100,
-    required: [true, 'Please enter a username.']
-},
-email: {
-    type: String,
-    min: [3, 'Please enter an email in the correct format'],
-    required: [true, 'Please enter an email']
-},
-password: {
-    type: String,
-    min: [8, 'Your password must be at least 8 characters large'],
-    required: [true, 'Please enter a password.']
-},
-  birthdate: { type: Date, required: true },
-  bookmark:{type: Array }
+    username: {
+        type: String,
+        min: [1, 'Too few characters'],
+        max: 100,
+        required: [true, 'Please enter a username.']
+    },
+    email: {
+        type: String,
+        min: [3, 'Please enter an email in the correct format'],
+        required: [true, 'Please enter an email']
+    },
+    password: {
+        type: String,
+        min: [8, 'Your password must be at least 8 characters large'],
+        required: [true, 'Please enter a password.']
+    },
+    birthdate: {
+        type: Date,
+        required: true
+    },
+    bookmark: {
+        type: Array
+    }
 
 });
 
@@ -46,4 +57,3 @@ module.exports = User;
 
 // create the model for users and expose it to our app
 // module.exports = mongoose.model('User', userSchema);
-
