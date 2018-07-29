@@ -19,6 +19,18 @@ class SignUp extends Component {
                 <h5 id="sign-up-header">Sign Up</h5>
 
                 <Form style={{width: "25%", clear: "both", overflow:"auto", margin: "0 auto"}}>
+                <input 
+                        type="text" 
+                        name="first"
+                        placeholder="First Name"/>
+                    <input 
+                        type="text" 
+                        name="last"
+                        placeholder="Last Name"/>
+                    <input 
+                        type="text" 
+                        name="email"
+                        placeholder="Email"/>
                     <input 
                         type="text" 
                         name="name"
@@ -37,7 +49,7 @@ class SignUp extends Component {
                         name="birthday"
                         placeholder="mm/dd/yy"/>
 
-                    <FormGroup 
+                    {/* <FormGroup 
                         check 
                         style={{float: "left", marginTop: 35}}>
                         <Label check>
@@ -46,7 +58,7 @@ class SignUp extends Component {
                                 />{' '}
                             <p style={{color: "#FFFFFE"}}>Remember Me</p>
                         </Label>
-                    </FormGroup>
+                    </FormGroup> */}
 
                 </Form>
 
