@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import './SignUp.css';
+import CreateAccountButton from '../../components/CreateAccountButton';
+
 
 import {Form, FormGroup, Label, Input} from 'reactstrap';
 
@@ -61,6 +63,9 @@ class SignUp extends Component {
                     </FormGroup> */}
 
                 </Form>
+                <div id="landing-page-buttons">
+                <CreateAccountButton />
+                </div>
 
                 
 
