@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-// var bcrypt   = require('bcrypt-nodejs'); - for auth use
+var bcrypt = require('bcrypt-nodejs');
 
 const Schema = mongoose.Schema;
 
@@ -39,7 +39,50 @@ const userSchema = new Schema({
 
 });
 
+
+
+
+
 const User = mongoose.model("User", userSchema);
+
+// User.insertMany(
+//     [
+//     {
+//       firstname: 'Alex',
+//       lastname: 'Arevalo',
+//       username: 'aarevalo12',
+//       email: "aarevalo@gmail.com",
+//       password: "todayisgreat",
+//       birthdate: "01/17/1994",
+//       bookmark: []
+//     },
+//     {
+//         firstname: 'Ben',
+//         lastname: 'Shim',
+//         username: 'bshim12',
+//         email: "bshim@gmail.com",
+//         password: "ilovecoding",
+//         birthdate: "01/17/1994",
+//         bookmark: []
+//     },
+//     {
+//         firstname: 'Celso',
+//         lastname: 'Olivera',
+//         username: 'olivera12',
+//         email: "odrinks@gmail.com",
+//         password: "bestdrinkever",
+//         birthdate: "01/17/1994",
+//         bookmark: []
+//     }
+//   ]
+//   ).then(data => {
+//     console.log(data);
+//     // process.exit(0);
+//   }).catch(err => {
+//         console.error(err);
+//         // process.exit(1);
+//       });
+
 
 module.exports = User;
 

@@ -7,7 +7,9 @@ const mongoose = require("mongoose")
 const PORT = process.env.PORT || 3001;
 
 // Define middleware here
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
 app.use(bodyParser.json());
 
 // Serve up static assets (usually on heroku)
@@ -22,6 +24,6 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/astrolab");
 
 
 
-app.listen(PORT, function() {
+app.listen(PORT, function () {
   console.log(`🌎 ==> OUTKAST 🎧  ANDRE ${PORT}!`);
 });

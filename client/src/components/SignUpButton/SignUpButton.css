@@ -1,0 +1,17 @@
+#sign-up-btn {
+    float: left;
+    border-radius: 10px;
+    padding: 7px 50px;
+    color: #1a8451;
+    font-family: "Futura";
+    box-shadow: 0 2px 6px -1px black;
+
+}
+
+#sign-up-btn:hover {
+    cursor: pointer;
+}
+
+#sign-up-btn:focus {
+    outline: none;
+}

@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const bookmarkSchema = new Schema({ 
+const bookmarkSchema = new Schema({
 
   name: {
     type: String,

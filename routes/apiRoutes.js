@@ -57,7 +57,7 @@ router.get('/reviews', (req, res) => {
 //   .get(usersController.findAll)
 //   .post(usersController.create);
 // //  
-// router
+// route
 //   .route("/users/:id")
 //   .get(usersController.findById)
 //   .put(usersController.update)
