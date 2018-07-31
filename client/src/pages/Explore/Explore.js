@@ -169,7 +169,7 @@ class Explore extends Component {
                     <button style={{ visibility: "hidden" }}>submit</button>
                 </form>
 
-                <div style={{position:"relative"}}>no
+                <div style={{position:"relative"}}>
                     <main className="mw6 center search-results">
                         {this.state.yelpResults.map(i => (
                             <ExploreItem name={i.name} icon={i.categories[0].title} />
