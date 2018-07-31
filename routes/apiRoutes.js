@@ -34,7 +34,7 @@ router.get('/hello', (req, res) => {
 router.get('/reviews', (req, res) => {
 
   client.reviews('jennifer-k-oliveira-dds-santa-monica').then(response => {
-    console.log(response.jsonBody.reviews.text)
+    console.log('reviews res=>', response.jsonBody.reviews.text)
     res.send(response.jsonBody.reviews);
   }).catch(e => {
     console.log(e);
