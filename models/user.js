@@ -4,8 +4,14 @@ var bcrypt = require('bcrypt-nodejs');
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
-    firstname: { type: String, required: true },
-    lastname: { type: String, required: true },
+    firstname: {
+        type: String,
+        required: true
+    },
+    lastname: {
+        type: String,
+        required: true
+    },
 
     username: {
         type: String,
@@ -23,8 +29,13 @@ const userSchema = new Schema({
         min: [8, 'Your password must be at least 8 characters large'],
         required: [true, 'Please enter a password.']
     },
-    birthdate: { type: Date, required: true },
-    bookmark: { type: Array }
+    birthdate: {
+        type: Date,
+        required: true
+    },
+    bookmark: {
+        type: Array
+    }
 
 });
 
@@ -89,4 +100,3 @@ module.exports = User;
 
 // create the model for users and expose it to our app
 // module.exports = mongoose.model('User', userSchema);
-
