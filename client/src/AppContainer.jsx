@@ -16,16 +16,19 @@ class AppContainer extends Component {
     super(props);
     this.state = {
         searchResults: [],
-        locationResults: []
+        locationResults: [],
+        yelpResults:[],
+        myLat:"", myLon:""
     }
   }
 
-  componentDidMount() {
-      this.setState({searchResults: 'Physics Astronomy', locationResults: 'UCLA'})
-  }
 
-  searchLocation = (search, location) => {
-    this.setState({searchResults: search, locationResults: location})
+
+  searchLocation = (search, location, lat, lon, yelpResults) => {
+      console.log("these are the search parameters -->", search, lat, location, lon)
+    this.setState({searchResults: search, locationResults: location, myLat: lat, myLon: lon, yelpResults: yelpResults})
+    // this.setState({myLat: lat, myLon: lon})
+    console.log("search occurred -->>>", this.state.myLat, this.state.myLon)
   }
 
   render() {
@@ -34,7 +37,7 @@ class AppContainer extends Component {
             <div>
                 <Route 
                     exact path="/"                 
-                    render={props => <Home {...props} googleMapsResult={this.state.searchResults} googleMapsLocation={this.state.locationResults}/>}
+                    render={props => <Home {...props} googleMapsLat={this.state.myLat}googleMapsLon={this.state.myLon}googleMapsResult={this.state.searchResults}  googleMapsLocation={this.state.locationResults}yelpResults={this.state.yelpResults}/>}
                     />
                 <Route 
                     path="/layers" 
