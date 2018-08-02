@@ -25,6 +25,7 @@ router.get('/hello', (req, res) => {
 
   client.search(searchRequest).then(response => {
     console.log("express", response.jsonBody.businesses)
+    console.log("additional yelp stuff -->", response.jsonBody)
     res.send(response.jsonBody.businesses)
   }).catch(e => {
     console.log(e);

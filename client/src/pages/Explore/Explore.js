@@ -12,6 +12,8 @@ class Explore extends Component {
     state = {
         search: "",
         location: "",
+        lat:"",
+        lon:"",
         modal: false,
         layersList,
         exploreList,
@@ -33,19 +35,24 @@ class Explore extends Component {
     // SUBMIT FORM 
 
     handleFormSubmit = event => {
-        // When the form is submitted, prevent its default behavior, get recipes update the recipes state
+        // When the form is submitted, prevent its default behavior
         event.preventDefault();
-        console.log('this is submit log', this.props.search, this.state.search, 'and props', this.props.location, this.state.location);
+        console.log('this is submit log', this.state.lon, this.state.search, 'and props', this.state.lat, this.state.location);
 
         API.getYelpLocations(this.state.location, this.state.search)
             .then(res => {
                 this.setState({ yelpResults: res.data });
-                console.log("this is the Yelp Object", this.state.yelpResults)
+                this.setState({lat: this.state.yelpResults[0].coordinates.latitude, 
+                    lon: res.data[0].coordinates.longitude
+
+                })
+                this.props.onSearchLocation(this.state.search, this.state.location, this.state.lat, this.state.lon, res.data); //--> FIRES UP A PROP f(x) to send the search query to the map
+
+                console.log("coodinates -->", this.state.lat, this.state.lon, res.data)
             })
             .catch(err => console.log(err));
 
         //   this.setState({search: '', location: ''});
-        this.props.onSearchLocation(this.state.search, this.state.location);
     };
 
     //MODAL 
@@ -142,7 +149,7 @@ class Explore extends Component {
                 <form
                     className="pa4 black-80"
                     onSubmit={event =>
-                        this.handleFormSubmit(event, this.state.search, this.state.location)
+                        this.handleFormSubmit(event, this.state.search, this.state.location, this.state.lat, this.state.lon, this.state.yelpResults)
                     }
                 >
                     <div className="measure center">
