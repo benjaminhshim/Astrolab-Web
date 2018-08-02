@@ -1,0 +1,29 @@
+.profile-body {
+    height: 100%;
+    height: 100vh;
+    /* background: black; */
+    background: linear-gradient(to bottom right, #D1481E, #471489);
+    color: #FFFFFE;
+    font-family: Futura;
+}
+
+#profile-username {
+    font-family: Futura;
+    font-size: 24px;
+    letter-spacing: 2px;
+    margin-top: 50px;
+}
+
+#profile-current-city {
+    margin-top: -5px;
+    font-size: 14px;
+}
+
+#profile-date {
+    margin-top: -10px;
+    font-size: 14px;
+}
+
+#settings-header {
+    font-size: 24px;
+}

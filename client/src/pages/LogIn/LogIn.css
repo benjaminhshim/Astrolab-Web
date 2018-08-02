@@ -1,12 +1,5 @@
-#log-in-header {
-    color: #FFFFFE;
-    margin-top: 20px;
-    letter-spacing: 1px;
-    font-family: "Futura";
-    text-align: center;
-}
+.log-in-body {
 
-.login-page-body {
     background: linear-gradient(to bottom right, #7C3CC5, #582D88);
     height: 100vh;
     padding-top: 75px;
@@ -25,6 +18,14 @@
     font-family: "Futura";
 }
 
+#log-in-header {
+    color: #FFFFFE;
+    margin-top: 20px;
+    letter-spacing: 1px;
+    font-family: "Futura";
+    text-align: center;
+}
+
 
 #landing-page-buttons {
     display: block;
@@ -37,13 +38,13 @@
     height: 50px;
 }
 
-.sign-up-body form {
+.log-in-body form {
     margin-top: 50px;
 }
 
-.login-page-body form input {
-    margin: 0 auto;
-    display: block;
+.log-in-body form input {
+
+
     background: transparent;
     border-top: none;
     border-left: none;
@@ -53,11 +54,22 @@
     color: #fffffe;
 }
 
-.sign-up-body form input:focus {
+.log-in-body form input:focus {
     outline: none;
 }
 
-#landing-page-buttons {
-    text-align: center;
+
+#checkbox {
+    clear: both;
+    overflow: auto;
+}
+
+#checkbox label {
+    float: left;
+    
+}
+
+#checkbox input {
+    margin-top: 0px !important;
 
 }

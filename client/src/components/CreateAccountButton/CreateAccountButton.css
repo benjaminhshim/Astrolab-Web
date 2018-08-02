@@ -1,15 +1,28 @@
 #create-account-btn {
-    color: #1a8451;
+    border-radius: 15px;
+    padding: 10px 20px;
+    color: #5C23A0;
     font-family: "Futura";
     box-shadow: 0 2px 6px -1px black;
+    float: none;
+    margin: 0 auto;
+    margin-top: 20px;
+    display: block;
 
 }
 
 #create-account-btn:hover {
     cursor: pointer;
+    text-decoration: none;
+
 }
 
 
 #create-account-btn:focus {
     outline: none;
+}
+
+#create-account-btn-div {
+    height: 50px;
+
 }

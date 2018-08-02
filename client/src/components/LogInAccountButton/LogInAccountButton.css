@@ -1,0 +1,25 @@
+#log-in-account-btn {
+    border-radius: 15px;
+    padding: 10px 30px;
+    color: #5C23A0;
+    font-family: "Futura";
+    box-shadow: 0 2px 6px -1px black;
+    float: none;
+    margin: 0 auto;
+    margin-top: 20px;
+    display: block;
+}
+
+#log-in-account-btn:hover {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+
+#log-in-account-btn:focus {
+    outline: none;
+}
+
+#log-in-account-btn-div {
+    height: 50px;
+}

@@ -1,8 +1,19 @@
 import axios from "axios";
 
-// The getLocations method retrieves recipes from the server
-// It accepts a "query" or term to search the recipe api for
 export default {
+  // Gets all articles
+  getUser: function() {
+    return axios.get('/api/users');
+  },
+  logInUser: function(username, password) {
+    return axios.get('/api/users/login');
+  },
+  create: function(userData) {
+    return axios.post("/api/users", userData);
+  },
+  searchYelp: function() {
+    return axios.get('/')
+  },
   getYelpLocations: function(query, query2) {
     console.log("this isthe API log ", query, query2)
     return axios.get("/hello", {  params: {location:query, term: query2 }} );
@@ -27,12 +38,3 @@ export default {
     }
 };
 
-
-// export default {
-//   getLocations: function(query) {
-//     return axios.get("/api/recipes", { params: {
-//       term: 'bar',
-//       location: 'los angeles,ca'
-//     } });
-//   }
-// };

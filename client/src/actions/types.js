@@ -1,0 +1,2 @@
+export const FETCH_TERM = 'FETCH_TERM';
+export const FETCH_LOCATION = 'FETCH_LOCATION';

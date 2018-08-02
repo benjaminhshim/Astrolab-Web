@@ -45,8 +45,7 @@
 }
 
 .sign-up-body form input {
-    margin: 0 auto;
-    display: block;
+
     background: transparent;
     border-top: none;
     border-left: none;
@@ -60,3 +59,18 @@
     outline: none;
 }
 
+
+#checkbox {
+    clear: both;
+    overflow: auto;
+}
+
+#checkbox label {
+    float: left;
+    
+}
+
+#checkbox input {
+    margin-top: 0px !important;
+
+}
