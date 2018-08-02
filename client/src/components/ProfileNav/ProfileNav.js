@@ -1,18 +1,81 @@
-import React, {Component} from 'react';
+import React from 'react';
 import './ProfileNav.css';
 import { Link } from 'react-router-dom';
-
+import Arrow from './profilenav.json';
 
 const ProfileNav = () => (
-    <nav className="dt w-100 border-box pa3 ph5-ns">
-        <div className="dtc v-mid w-75" >
-            <ul>
-                <li><Link to="/profile/settings" className="link dib mr3 mr4-ns nav-item">Profile Settings</Link></li>
-                <li><Link to="/profile/notifications" className="link dib mr3 mr4-ns nav-item">Notifications</Link></li>
-                <li ><Link to="/profile/review-history" className="link dib mr3 mr4-ns nav-item">View Review History</Link></li>
-                <li><Link to="/profile/permissions" className="link dib mr3 mr4-ns nav-item">Manage Permissions</Link></li>
-                <li><Link to="/profile/logout" className="link dib nav-item" >Log Out</Link></li>
-            </ul>
+    <nav className="dt w-100 border-box">
+        <div className="dtc v-mid w-75 profile-nav" >
+
+            <article className="dt w-100 b--black-05 pb2 mt3 layers-item" href="#0">
+                <div className="dtc v-mid pl3">
+                    <h1 className="f6 f5-ns lh-title mv0">
+                        <Link to="/profile/settings" className="link dib mr3 mr4-ns nav-item">Profile Settings</Link> 
+                    </h1>
+                </div>
+
+                <div className="dtc v-mid tr">
+                    <img className="f6 w-10 h-10 pointer pv1" src={Arrow[0].icon} alt="" />
+                </div>
+            </article>
+
+            <article className="dt w-100 b--black-05 pb2 mt3 layers-item" href="#0">
+                <div className="dtc v-mid pl3">
+                    <h1 className="f6 f5-ns lh-title mv0">
+                        <Link to="/profile/notifications" className="link dib mr3 mr4-ns nav-item">Notifications</Link> 
+                    </h1>
+                </div>
+
+                <div className="dtc v-mid tr">
+                    <img className="f6 w-10 h-10 pointer pv1 " src={Arrow[0].icon} alt="" />
+                </div>
+            </article>
+
+     
+
+            <article className="dt w-100 b--black-05 pb2 mt3 layers-item" href="#0">
+                <div className="dtc v-mid pl3">
+                    <h1 className="f6 f5-ns lh-title mv0">
+                        <Link to="/profile/review-history" className="link dib mr3 mr4-ns nav-item">View Review History</Link> 
+                    </h1>
+                </div>
+
+                <div className="dtc v-mid tr">
+                    <img className="f6 w-10 h-10 pointer pv1 " src={Arrow[0].icon} alt="" />
+                </div>
+            </article>
+
+            <article className="dt w-100 b--black-05 pb2 mt3 layers-item" href="#0">
+                <div className="dtc v-mid pl3">
+                    <h1 className="f6 f5-ns lh-title mv0">
+                        <Link to="/profile/permissions" className="link dib mr3 mr4-ns nav-item">Manage Permissions</Link> 
+                    </h1>
+                </div>
+
+                <div className="dtc v-mid tr">
+                    <img className="f6 w-10 h-10 pointer pv1 " src={Arrow[0].icon} alt="" />
+                </div>
+            </article>
+
+            <article className="dt w-100 b--black-05 pb2 mt3 layers-item" href="#0">
+                <div className="dtc v-mid pl3">
+                    <h1 className="f6 f5-ns lh-title mv0">     
+                        <Link to="/profile/logout" className="link dib nav-item" >Log Out</Link> 
+                    </h1>
+                </div>
+
+                <div className="dtc v-mid tr">
+                    <img className="f6 w-10 h-10 pointer pv1 " src={Arrow[0].icon} alt="" />
+                </div>
+            </article>
+
+
+
+
+           
+            
+           
+   
         </div>
     </nav>
 );

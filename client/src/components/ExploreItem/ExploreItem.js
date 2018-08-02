@@ -11,7 +11,10 @@ class ExploreItem extends Component {
                 </div>
 
                 <div className="dtc v-mid tr">
-                    <img className="f6 w-10 h-10 b--black-10 dim pointer pv1 black-60" src={this.props.icon} />
+                    <img 
+                        className="f6 w-10 h-10 b--black-10 dim pointer pv1 black-60" 
+                        src={this.props.icon} 
+                        alt=""/>
                 </div>
                 
             </article>

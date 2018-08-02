@@ -2,11 +2,12 @@ import React, {Component} from 'react';
 import Nav from '../../components/Nav';
 import './Explore.css';
 // import ExploreModal from '../../components/ExploreModal';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import { Modal, ModalHeader, ModalBody } from 'reactstrap';
 import ExploreItem from '../../components/ExploreItem';
 import layersList from '../Layers/layers.json';
 import exploreList from '../Explore/explore.json';
-import axios from 'axios';
+
+
 
 class Explore extends Component {
     
@@ -52,6 +53,7 @@ class Explore extends Component {
                     <p className="tc" id="explore-header">Search</p>
                     <img  
                         src='/assets/images/AstrolabIconImages/FilterMapImg.png'
+                        alt=""
                         id="explore-filter"
                         className="fr w2 h2 absolute top-0"
                         onClick={this.toggleModal}/>
@@ -66,6 +68,7 @@ class Explore extends Component {
                             Customize Explore
                             <img  
                                 src='/assets/images/AstrolabIconImages/FilterMapActive.png'
+                                alt=""
                                 id="explore-filter-active"
                                 className="fr w2 h2 absolute top-0"
                                 onClick={this.toggleModal}/>
@@ -75,10 +78,12 @@ class Explore extends Component {
                                 <p>Slide to set search distance</p>
                                 <img 
                                     src='/assets/images/AstrolabIconImages/ExploreSliderTrack.png'
+                                    alt=""
                                     id="explore-slider-track"
                                     className="fr absolute w-75 top-4"/>
                                 <img 
                                     src='/assets/images/AstrolabIconImages/ExploreSlider.png'
+                                    alt=""
                                     id="explore-slider"
                                     className="fr absolute w2"/>
                                 <span 
@@ -139,8 +144,8 @@ class Explore extends Component {
                     <button style={{visibility: "hidden"}}>submit</button>
                 </form>
 
-                <div>
-                    <main className="mw6 center">
+                <div style={{position: "relative"}}>
+                    <main className="mw6 center search-results">
 
                         {this.state.exploreList.map(i => (
                             <ExploreItem 
@@ -156,7 +161,6 @@ class Explore extends Component {
         )
     }
 }
-
 
 
 export default Explore;

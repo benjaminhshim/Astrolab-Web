@@ -3,6 +3,8 @@ const router = require("express").Router();
 const yelp = require('yelp-fusion');
 const apiKey = 'tjWeCYoOxLdJP26PTWIdR0ww5r4Wyw0iI93pvORu_2o_j2pJBPAGZBpWFAPSfolo1WYhug7az9S78WiCKL5T9neJIUnRYmADfu6wsRdTRxPvz3BvJJqzwSAqDYy8WnYx';
 const bookmarksController = require("../controllers/bookmarksController");
+const userController = require("../controllers/userController");
+
 const path = require("path");
 
 // let searchRequest = {
@@ -27,7 +29,7 @@ router.get('/hello', (req, res) => {
     }).catch(e => {
       console.log(e);
     });
-  });
+});
 
 router.get('/reviews', (req, res) => {
   
@@ -58,8 +60,6 @@ router
 router.get("*", function(req, res) {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
-
-module.exports = router;
 
 // router.get("/recipes", (req, res) => {
   //   axios

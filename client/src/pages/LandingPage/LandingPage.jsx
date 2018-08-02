@@ -13,7 +13,8 @@ class LandingPage extends Component {
 
                 <img 
                     src='/assets/images/AstrolabIconImages/Logo.png' 
-                    id="astrolab-logo"/>
+                    id="astrolab-logo"
+                    alt=""/>
 
                 <h2 className="tc" id="landing-page-header">ASTROLAB</h2>
 

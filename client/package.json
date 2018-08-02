@@ -17,9 +17,13 @@
   "devDependencies": {
     "axios": "^0.18.0",
     "bootstrap": "^4.1.2",
+    "morgan": "^1.9.0",
     "radium": "^0.24.1",
     "react-animations": "^1.0.0",
+    "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1",
-    "reactstrap": "^6.3.0"
+    "reactstrap": "^6.3.0",
+    "redux": "^4.0.0",
+    "redux-thunk": "^2.3.0"
   }
 }
