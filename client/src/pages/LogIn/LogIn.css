@@ -1,4 +1,5 @@
 .log-in-body {
+
     background: linear-gradient(to bottom right, #7C3CC5, #582D88);
     height: 100vh;
     padding-top: 75px;
@@ -25,6 +26,7 @@
     text-align: center;
 }
 
+
 #landing-page-buttons {
     display: block;
     text-align: center;
@@ -41,6 +43,7 @@
 }
 
 .log-in-body form input {
+
 
     background: transparent;
     border-top: none;

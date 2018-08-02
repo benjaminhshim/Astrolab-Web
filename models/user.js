@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const bcrypt = require('bcryptjs');
 
+
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
@@ -16,6 +17,7 @@ const userSchema = new Schema({
     },
   username: 
     {
+
         type: String,
         min: [1, 'Too few characters'],
         max: 100,
@@ -53,6 +55,7 @@ userSchema.methods = {
     }
 }
 
+
 userSchema.pre('save', function(next) {
     if (!this.password) {
         console.log('models/user.js ======= NO PASSWORD PROVIDED ========');
@@ -65,6 +68,12 @@ userSchema.pre('save', function(next) {
     
 })
 
+
+
+
+
 const User = mongoose.model("User", userSchema);
 
+
 module.exports = User;
+

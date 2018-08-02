@@ -55,6 +55,7 @@ class SignUp extends Component {
 				console.log('signup error: ')
 				console.log(error)
 
+
 			})
     }
 

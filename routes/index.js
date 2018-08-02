@@ -1,10 +1,15 @@
 const path = require("path");
 const router = require("express").Router();
-// const apiRoutes = require("./apiRoutes");
 const userAPIRoutes = require("./api");
 
-// router.use("/", apiRoutes);
 router.use("/api", userAPIRoutes);
+ //POSSIBLY COMMENT OUT
+const apiRoutes = require("./apiRoutes");
+const bookmarkRoutes = require("./bookmarkRoutes");
+
+// YELP routes
+router.use("/", apiRoutes);
+router.use("/bookmark", bookmarkRoutes)
 
 
 router.use(function(req, res) {

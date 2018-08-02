@@ -1,49 +1,67 @@
-import React, {Component} from 'react';
-import Nav from '../../components/Nav';
-import './Explore.css';
+import React, { Component } from "react";
+import Nav from "../../components/Nav";
+import "./Explore.css";
 // import ExploreModal from '../../components/ExploreModal';
 import { Modal, ModalHeader, ModalBody } from 'reactstrap';
 import ExploreItem from '../../components/ExploreItem';
 import layersList from '../Layers/layers.json';
 import exploreList from '../Explore/explore.json';
-
-
+import API from "../../utils/API";
 
 class Explore extends Component {
-    
     state = {
-        search: '',
-        location: '',
+        search: "",
+        location: "",
+        lat:"",
+        lon:"",
         modal: false,
         layersList,
         exploreList,
-        results: []
-    }
+        results: [],
+        yelpResults: []
+    };
+    // END state declaration, BEGIN FUNCTIONS
 
-    
     handleInputChange = event => {
-        const {name, value} = event.target;
+        // Destructure the name and value properties off of event.target
+        // Update the appropriate state
+        const { name, value } = event.target;
         this.setState({
             [name]: value
         });
-    }
+        console.log("name, value", name, value);
+    };
 
-    toggleModal = () => {
-        this.setState({ modal: !this.state.modal })
-    }
+    // SUBMIT FORM 
 
-    // searchMovie = movie => {
-    //     axios.get(`https://api.giphy.com/v1/gifs/search?q=${movie}&api_key=dc6zaTOxFJmzC&limit=1`)
-    //     .then(res => this.setState({results: res.data.data[0].title}))
-    //     .catch(err => console.log(err));
-    // }
-
-    onSearchLocation = (event, search, location) => {
+    handleFormSubmit = event => {
+        // When the form is submitted, prevent its default behavior
         event.preventDefault();
-        console.log('test');
-        this.setState({search: '', location: ''});
-        this.props.onSearchLocation(search, location);
-    }
+        console.log('this is submit log', this.state.lon, this.state.search, 'and props', this.state.lat, this.state.location);
+
+        API.getYelpLocations(this.state.location, this.state.search)
+            .then(res => {
+                this.setState({ yelpResults: res.data });
+                this.setState({lat: this.state.yelpResults[0].coordinates.latitude, 
+                    lon: res.data[0].coordinates.longitude
+
+                })
+                this.props.onSearchLocation(this.state.search, this.state.location, this.state.lat, this.state.lon, res.data); //--> FIRES UP A PROP f(x) to send the search query to the map
+
+                console.log("coodinates -->", this.state.lat, this.state.lon, res.data)
+            })
+            .catch(err => console.log(err));
+
+        //   this.setState({search: '', location: ''});
+    };
+
+    //MODAL 
+    toggleModal = () => {
+        this.setState({ modal: !this.state.modal });
+    };
+
+    // BEGIN RENDERING 
+
 
     render() {
         return (
@@ -54,24 +72,29 @@ class Explore extends Component {
                     <img  
                         src='/assets/images/AstrolabIconImages/FilterMapImg.png'
                         alt=""
+
                         id="explore-filter"
                         className="fr w2 h2 absolute top-0"
-                        onClick={this.toggleModal}/>
+                        onClick={this.toggleModal}
+                    />
                 </div>
 
                 <div>
-                    <Modal 
-                        isOpen={this.state.modal} 
-                        toggle={this.toggleModal} 
-                        className={this.props.className}>
+                    <Modal
+                        isOpen={this.state.modal}
+                        toggle={this.toggleModal}
+                        className={this.props.className}
+                    >
                         <ModalHeader>
                             Customize Explore
                             <img  
                                 src='/assets/images/AstrolabIconImages/FilterMapActive.png'
                                 alt=""
+
                                 id="explore-filter-active"
                                 className="fr w2 h2 absolute top-0"
-                                onClick={this.toggleModal}/>
+                                onClick={this.toggleModal}
+                            />
                         </ModalHeader>
                         <ModalBody>
                             <div>
@@ -84,12 +107,12 @@ class Explore extends Component {
                                 <img 
                                     src='/assets/images/AstrolabIconImages/ExploreSlider.png'
                                     alt=""
+
                                     id="explore-slider"
-                                    className="fr absolute w2"/>
-                                <span 
-                                    id="explore-distance"
-                                    className="absolute">
-                                        <p>80 mi</p>
+                                    className="fr absolute w2"
+                                />
+                                <span id="explore-distance" className="absolute">
+                                    <p>80 mi</p>
                                 </span>
                             </div>
 
@@ -98,10 +121,18 @@ class Explore extends Component {
 
                             <div>
                                 <p>Sort by</p>
-                                <button 
-                                    class="f6 link ph3 pv2 mb2 dib white bg-black" id="explore-btn-abc">Alphabetical</button>
-                                <button 
-                                    class="f6 link ph3 pv2 mb2 dib white bg-black" id="explore-btn-closest">Closest</button>
+                                <button
+                                    class="f6 link ph3 pv2 mb2 dib white bg-black"
+                                    id="explore-btn-abc"
+                                >
+                                    Alphabetical
+                </button>
+                                <button
+                                    class="f6 link ph3 pv2 mb2 dib white bg-black"
+                                    id="explore-btn-closest"
+                                >
+                                    Closest
+                </button>
                             </div>
 
                             <br />
@@ -119,48 +150,50 @@ class Explore extends Component {
                     </Modal>
                 </div>
 
-                <form 
-                    className="pa4 black-80" 
-                    onSubmit={event => this.onSearchLocation(event, this.state.search, this.state.location)}
-                    >
+                <form
+                    className="pa4 black-80"
+                    onSubmit={event =>
+                        this.handleFormSubmit(event, this.state.search, this.state.location, this.state.lat, this.state.lon, this.state.yelpResults)
+                    }
+                >
                     <div className="measure center">
-                        <input 
-                            id="explore-search" 
+                        <input
+                            id="explore-search"
                             className="input-reset ba b--white pa2 mb2 db w-100 br3"
-                            type="text" 
-                            placeholder="Search" 
+                            type="text"
+                            placeholder="Search"
                             value={this.state.search}
                             name="search"
-                            onChange={this.handleInputChange} />
-                        <input 
-                            id="explore-location" 
-                            className="input-reset ba b--white pa2 mb2 db w-100 br3" 
-                            type="text" 
-                            placeholder="Current Location" 
+                            onChange={this.handleInputChange}
+                        />
+                        <input
+                            id="explore-location"
+                            className="input-reset ba b--white pa2 mb2 db w-100 br3"
+                            type="text"
+                            placeholder="Current Location"
                             value={this.state.location}
                             name="location"
-                            onChange={this.handleInputChange} />
+                            onChange={this.handleInputChange}
+                        />
+                        {/* this would be a good place to execute Yelp API Autocomplete */}
                     </div>
-                    <button style={{visibility: "hidden"}}>submit</button>
+                    <button style={{ visibility: "hidden" }}>submit</button>
                 </form>
 
-                <div style={{position: "relative"}}>
+
+                <div style={{position:"relative"}}>
                     <main className="mw6 center search-results">
-
-                        {this.state.exploreList.map(i => (
-                            <ExploreItem 
-                                name={i.name}
-                                icon={i.icon}/>
+                        {this.state.yelpResults.map(i => (
+                            <ExploreItem name={i.name} icon={i.categories[0].title} />
                         ))}
-
                     </main>
                 </div>
 
                 <div>{this.state.results}</div>
             </div>
-        )
+        );
     }
 }
 
-
 export default Explore;
+

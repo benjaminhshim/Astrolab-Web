@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
 import './CreateAccountButton.css';
 
+
 class CreateAccountButton extends Component {
     render() {
         return (
@@ -13,6 +14,7 @@ class CreateAccountButton extends Component {
                         Create Account
                     </button>
                 </Link>
+
             </div>
         )
     }

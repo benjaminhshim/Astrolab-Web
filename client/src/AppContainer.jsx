@@ -69,9 +69,18 @@ class AppContainer extends Component {
           }
       })
   }
+        yelpResults:[],
+        myLat:"", myLon:""
+    }
+  }
 
-  searchLocation = (search, location) => {
-    this.setState({searchResults: search, locationResults: location})
+
+
+  searchLocation = (search, location, lat, lon, yelpResults) => {
+      console.log("these are the search parameters -->", search, lat, location, lon)
+    this.setState({searchResults: search, locationResults: location, myLat: lat, myLon: lon, yelpResults: yelpResults})
+    // this.setState({myLat: lat, myLon: lon})
+    console.log("search occurred -->>>", this.state.myLat, this.state.myLon)
   }
 
   userLoggedIn = user => {
@@ -85,9 +94,8 @@ class AppContainer extends Component {
                 <div>
                     <Route 
                         path="/home"                 
-                        render={props => <Home {...props} 
-                            googleMapsResult={this.state.searchResults} 
-                            googleMapsLocation={this.state.locationResults}/>}
+                        render={props => <Home {...props} googleMapsLat={this.state.myLat}googleMapsLon={this.state.myLon}googleMapsResult={this.state.searchResults}  googleMapsLocation={this.state.locationResults}yelpResults={this.state.yelpResults}/>}
+
                         />
                     <Route 
                         path="/layers" 
@@ -150,6 +158,7 @@ class AppContainer extends Component {
             </Router>
         )
     
+
   }
 }
 

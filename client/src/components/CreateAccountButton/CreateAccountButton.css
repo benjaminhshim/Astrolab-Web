@@ -8,11 +8,13 @@
     margin: 0 auto;
     margin-top: 20px;
     display: block;
+
 }
 
 #create-account-btn:hover {
     cursor: pointer;
     text-decoration: none;
+
 }
 
 
@@ -22,4 +24,5 @@
 
 #create-account-btn-div {
     height: 50px;
+
 }
