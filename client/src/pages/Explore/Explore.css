@@ -1,3 +1,9 @@
+@font-face {
+    font-family: 'Futura-PT-Book';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Futura-PT-Book'), url('../../assets/fonts/futura-pt-book.ttf') format('truetype');
+}
 
 .explore-body {
     height: 100%;
@@ -12,7 +18,7 @@
 
 #explore-header {
     font-family: Futura;
-    font-size: 24px;
+    font-size: 20pt;
     letter-spacing: 1px;
     margin-top: 50px;
 }
@@ -21,6 +27,8 @@
 #explore-location {
     background: transparent;
     color: #FFFFFE;
+    font-family: 'Futura-PT-Book';
+    font-size: 14pt;
 }
 
 #explore-search:focus,
@@ -37,6 +45,24 @@
 }
 
 /* MODAL */
+
+#explore-modal h1 {
+    font-family: "Futura-PT-Book";
+    font-size: 16pt;
+    letter-spacing: 1.5px;
+}
+
+#explore-modal p {
+    font-family: "Futura-PT-Book";
+    font-size: 16pt;
+    letter-spacing: 1px;
+}
+
+
+#explore-modal button {
+    font-family: "Futura-PT-Book";
+    font-size: 12pt;
+}
 .modal {
     font-family: Futura;
     color: #FFFFFE;
@@ -49,6 +75,11 @@
     border: 1px solid #FFFFFE !important;
     border-radius: 10px !important;
     box-shadow: 0px 1px 3px 1px darkgray !important;
+}
+
+.modal-header {
+    border-bottom: 1px solid rgb(92, 92, 92) !important;
+
 }
 
 .modal-title {
@@ -79,6 +110,12 @@
     margin-right: 10px;
 }
 
+#explore-btn-abc:hover,
+#explore-btn-closest:hover,
+.explore-layers-btn:hover {
+    cursor: pointer;
+}
+
 .explore-layers-btn {
     border-radius: 10px;
     /* background: rgb(104, 172, 111); */
@@ -96,6 +133,11 @@
 .explore-layers-btn:focus {
     text-decoration: none;
     outline: none;
+}
+
+#explore-modal #map-match {
+    font-size: 12pt;
+    margin-top: -7px;
 }
 
 .search-results {

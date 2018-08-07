@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import API from "../../utils/API"
+import './LayersItem.css';
 class LayersItem extends Component {
 
         // this.handleInputChange = this.handleInputChange.bind(this);
@@ -20,17 +21,17 @@ class LayersItem extends Component {
 
 
 
-
     render() {
         return (
             <article className="dt w-100 b--black-05 pb2 mt3 layers-item" href="#0">
 
                 <div className="dtc w2 w3-ns v-mid">
                     <input className="mr1"
-                        name={[this.props.title]}
-                        // yelpCats={this.props.id[this.props.title]}
+                        name={[this.props.title, this.props.myId]}
+                        checked={this.props.isChecked}
                         type="checkbox"
                         onChange={this.props.balls}
+                        id = {this.props.myId}
                     />
                 </div>
 
@@ -39,7 +40,7 @@ class LayersItem extends Component {
                 </div>
 
                 <div className="dtc v-mid tr">
-                    <img className="f6 w-10 h-10 b--black-10 dim pointer pv1 black-60" src={this.props.icon} alt="" />
+                    <img className="f6 h-10 b--black-10 dim pointer pv1 black-60" src={this.props.icon} alt=""/>
                 </div>
 
             </article>

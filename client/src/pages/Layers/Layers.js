@@ -6,92 +6,66 @@ import layersList from "./layers.json";
 import API from "../../utils/API"
 
 class Layers extends Component {
-    state = {
-        search: "",
-        location: "",
-        categories: {
-            Bars: false,
-            Cafés: false,
-            General: false,
-            Home: false,
-            Landmarks: false,
-            Nature: false,
-            Nightlife: false,
-            Restaurants: false,
-            Retail: false,
-            Transportation: false
-        },
-        lat: "",
-        lon: "",
-        modal: false,
-        isChecked: false,
-        layersList,
-        results: [],
-        yelpResults: []
-    };
-    // END state declaration, BEGIN FUNCTIONS
-
+    constructor(props) {
+        super(props);
+        this.state = {
+            search: "",
+            location: "",
+            myString: "",
+            lat: "",
+            lon: "",
+            modal: false,
+            isChecked: false,
+            layersList,
+            results: [],
+            yelpResults: []
+        };
+        this.handleInputChange = this.handleInputChange.bind(this);
+        // END state declaration, BEGIN FUNCTIONS
+    }
     handleInputChange = event => {
-
-        // Destructure the name and value properties off of event.target
-        // Update the appropriate state
-        let queryString = "";
         const target = event.target;
-        //grabs checkbox input with category "name"
 
-        console.log("this is the event target -->", event.target, "this is checked --", target.checked);
+        console.log("event target -->", target, 'value-->', target.value, target.id, '-- keyid')        // Update the appropriate state
 
         const value = target.type === "checkbox" ? target.checked : target.value;
-        const name = target.name;
-        // define consts value 
-        this.setState(prevState => ({
-            categories: {
-                ...prevState.categories, // research exactly what's going on here, toggles categories ON ?? 
-                [name]: value
+        const name = this.state.layersList[target.id];
+        console.log("event name -->", name, 'value-->', target.value, this.state.layersList[target.id].isChecked, '-- keyid')        // Update the appropriate state
+
+        var stateCopy = Object.assign({}, this.state);
+        stateCopy.layersList[target.id].isChecked = value;
+        this.setState(stateCopy);
+    }
+
+    componentDidUpdate() {
+        var queryObject = Object.assign({}, this.state.layersList);
+        console.log("queryObject-->", queryObject)
+
+        var queryArray = Object.keys(queryObject).map(function (key) {
+            return Number(key), queryObject[key];
+        });
+
+        console.log(queryArray);
+
+        // var queryArray = queryObject[0].categories)
+        // console.log("queryArray-->", queryArray)
+
+        var queryString = ""
+        console.log("queryString-->", queryString)
+
+        for (let index = 0; index < queryArray.length; index++) {
+            console.log("hello loop")
+            if (queryObject[index].isChecked) {
+                console.log("match --> push to array");
+                queryString += queryObject[index].categories.toString()
             }
-        }));
 
-        const cats = this.state.categories // assigns state object to cats, containing boolean true for each toggled
-        // cat
-
-        console.log('this is cats', cats)
-        //these should be exactly the same 
-        console.log('selesctedCats', this.state.categories)
-
-        // This contains nested loops which could be avoided by refactoring json data
-        // to object instead of array, but not necessary.
-
-        for (let index = 0; index < layersList.length; index++) {
-            console.log(index, 'this is the index')
-            for (var key in this.state.categories) {
-                console.log(key, 'this is the key', this.state.categories, 'and categories from state!')
-
-                let i = this.state.categories[key];
-                console.log("this is i ", i, 'and the state cat key --- ', this.state.categories[key])
-                
-                console.log("this is the boolean -->", key, layersList[index].title);
-                if(this.state.categories[key]){
-                    console.log("this is the this.state.cats[keys] -->", this.state.categories[key]);
-
-                    if (key === layersList[index].title) {
-                        console.log('matched');
-                        console.log('this is querystring', queryString, 'and the addition', layersList[index].categories)
-                        queryString += layersList[index].categories
-                        console.log('this is querystring', queryString, 'and the addition', layersList[index].categories)
-
-                    }
-                }
-            }
-            // console.log ("this is the key", key, layersList.length, this.state.categories.key)
-            console.log("finsined sting s-- - >> ", queryString);
         }
 
-        console.log("finsined sting s-- - >> ", queryString);
-        this.fireUpYelpSearch (queryString)
+        this.fireUpYelpSearch(queryString.toString())
+    }
 
-    };
 
-    // Handle STRING FORM
     fireUpYelpSearch = (query) => {
 
         console.log('this is layers checked log');
@@ -131,9 +105,10 @@ class Layers extends Component {
                         <LayersItem
                             title={i.title}
                             icon={i.icon}
-                            id={i.categories}
+                            id={i.layersList}
                             balls={this.handleInputChange}
-                            isChecked={this.state.categories[i.title]}
+                            isChecked={this.state.layersList[i.title]}
+                            myId={i.myId}
                         />
                     ))}
                 </main>
@@ -141,5 +116,4 @@ class Layers extends Component {
         );
     }
 }
-
 export default Layers;
