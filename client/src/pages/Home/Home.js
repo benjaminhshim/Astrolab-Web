@@ -27,7 +27,7 @@ class Home extends Component {
     saveItem = data => {
         console.log(data.name);
         console.log(data.alias);
-        axios.post('/bookmark/bookmarks', {
+        axios.post('/bookmarksApi', {
             name: data.name,
             alias: data.alias
         }).then(res => {

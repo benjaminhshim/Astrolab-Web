@@ -8,7 +8,7 @@ const usersController = require("../controllers/usersController");
 const path = require("path");
 
 // BOOKMARK ROUTES 
-router.route("/bookmarks")
+router.route("/")
   .get(bookmarksController.findAll)
   .post(bookmarksController.create);
 

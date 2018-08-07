@@ -4,12 +4,45 @@ import BookmarksNav from '../../components/BookmarksNav';
 import './Bookmarks.css';
 import bookmarksList from '../Bookmarks/bookmarks.json';
 import BookmarksItem from '../../components/BookmarksItem';
+import { Container, Row, Col } from 'reactstrap';
+import API from "../../utils/API";
+
 
 class Bookmarks extends Component {
     state = {
-        search: '',
-        bookmarksList
-    }
+        search: "",
+        location: "",
+        lat:"",
+        lon:"",
+        modal: false,
+        results: [],
+        yelpResults: []
+    };
+
+    componentDidMount() {
+        
+        this.loadBookmarks();
+
+      };
+
+      loadBookmarks = () => {
+        API.getBookmarks()
+          .then(res => {
+
+            this.setState({ results: res.data });
+            // this.setState({lat: this.state.yelpResults[0].coordinates.latitude, 
+            //     lon: res.data[0].coordinates.longitude
+
+            // })
+
+            // this.props.onSearchLocation(this.state.search, this.state.location, this.state.lat, this.state.lon, res.data); //--> FIRES UP A PROP f(x) to send the search query to the map
+
+            console.log("coodinates -->", res.data)
+        })
+        .catch(err => console.log(err));
+
+      };
+    
 
     handleInputChange = event => {
         const {name, value} = event.target;
@@ -50,11 +83,11 @@ class Bookmarks extends Component {
 
                 <div>
                     <main className="mw6 center">
-
-                        {this.state.bookmarksList.map(i => (
+                        {this.state.results.map(i => (
                             <BookmarksItem
                                 name={i.name}
-                                icon={i.icon} />
+                                icon={i.icon} 
+                                />
                         ))}
                     </main>
                 </div>
