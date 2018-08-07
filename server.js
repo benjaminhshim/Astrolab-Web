@@ -39,6 +39,9 @@ app.use(passport.session());
 
 app.use(routes);
 
+app.use('*', function(req, res) {
+  res.sendFile(path.join(__dirname, "./client/build/index.html"));
+});
 
 // Connect to the Mongo DB
 

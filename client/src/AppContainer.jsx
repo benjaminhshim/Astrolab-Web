@@ -30,7 +30,9 @@ class AppContainer extends Component {
         locationResults: [],
         loggedIn: '',
         username: null,
-        redirectTo: null
+        redirectTo: null,
+        yelpResults:[],
+        myLat:"", myLon:""
     }
   }
 
@@ -68,10 +70,6 @@ class AppContainer extends Component {
               })
           }
       })
-  }
-        yelpResults:[],
-        myLat:"", myLon:""
-    }
   }
 
 
