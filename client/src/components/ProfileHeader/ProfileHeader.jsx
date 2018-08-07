@@ -12,8 +12,8 @@ class ProfileHeader extends Component {
                         <p className="tc" id="profile-username">Username</p>
                     }
 
-                    <p className="tc" id="profile-current-city">Current City</p>
-                    <p className="tc" id="profile-date">Month Day, Year</p>
+                    <p className="tc" id="profile-current-city">Los Angeles</p>
+                    <p className="tc" id="profile-date">August 8, 2018</p>
                 </div>
             </div> 
         )

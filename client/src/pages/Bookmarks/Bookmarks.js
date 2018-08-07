@@ -25,12 +25,12 @@ class Bookmarks extends Component {
                 <Nav />
                 <div className="relative">
                     <p className="tc" id="explore-header">Saved</p>
-                    <img  
+                    {/* <img  
                         src='/assets/images/AstrolabIconImages/BookmarksEditResting.png'
                         alt=""
                         id="explore-filter"
                         className="fr w2 h2 absolute top-0"
-                        onClick={this.toggleModal}/>
+                        onClick={this.toggleModal}/> */}
                 </div>
 
                 <BookmarksNav />

@@ -3,6 +3,7 @@ import './ExploreItem.css';
 
 class ExploreItem extends Component {
     render() {
+        
         return (
             <article className="dt w-100 b--black-05 pb2 mt3 explore-item" href="#0">
 
@@ -12,9 +13,11 @@ class ExploreItem extends Component {
 
                 <div className="dtc v-mid tr">
                     <img 
-                        className="f6 w-10 h-10 b--black-10 dim pointer pv1 black-60" 
+                        className="f6 h-10 b--black-10 dim pointer pv1 black-60" 
                         src={this.props.icon} 
-                        alt=""/>
+                        onClick={() => this.props.bookmarkThis(this.props.bookmarkData)}
+                        // alt={this.props.icon}
+                        />
                 </div>
                 
             </article>

@@ -5,7 +5,7 @@
     color: #1a8451;
     font-family: "Futura";
     box-shadow: 0 2px 6px -1px black;
-
+    margin-left: 40%;
 }
 
 #sign-up-btn:hover {
@@ -15,7 +15,3 @@
 #sign-up-btn:focus {
     outline: none;
 }
-/* 
-#sign-up-btn-div {
-    height: 50px;
-} */

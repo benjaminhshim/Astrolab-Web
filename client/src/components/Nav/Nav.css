@@ -1,7 +1,10 @@
-nav {
+#main-nav {
     font-family: Futura;
     background: transparent;
     color: #FFFFFE;
+    /* max-width: 85%; */
+    padding-top: 20px !important;
+    margin: 0px auto;
 }
 
 .nav-item {

@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { Redirect } from 'react-router-dom';
 import Nav from '../../../components/Nav';
+import LogOutButton from '../../../components/LogOutButton';
 import ProfileHeader from '../../../components/ProfileHeader';
 import axios from 'axios';
 
@@ -37,7 +38,8 @@ class LogOut extends Component {
                 <main className="profile-settings-body mw6 center">
 
                     <p id="settings-header">Log Out</p>
-                    <button onClick={this.logOut}>Log Out</button>
+                    <LogOutButton 
+                        logOut={this.logOut}/>
 
                 </main>
             </div> 

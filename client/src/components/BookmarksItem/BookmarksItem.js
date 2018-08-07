@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-
+import './BookmarksItem.css';
 class BookmarksItem extends Component {
     render() {
         return (
@@ -10,7 +10,7 @@ class BookmarksItem extends Component {
                 </div>
 
                 <div className="dtc v-mid tr">
-                    <img className="f6 w-10 h-10 b--black-10 dim pointer pv1 black-60" src={this.props.icon} alt=""/>
+                    <img className="f6 h-10 b--black-10 dim pointer pv1 black-60" src={this.props.icon} alt=""/>
                 </div>
                 
             </article>

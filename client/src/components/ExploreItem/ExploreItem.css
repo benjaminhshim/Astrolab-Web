@@ -19,7 +19,9 @@
 }
 
 
-
+.explore-item img {
+    width: 20px;
+}
 
 h1 {
     font-family: 'Titling', !important;
