@@ -23,23 +23,27 @@ export default {
     console.log("this isthe API log ", query, query2)
     return axios.get("/hello", {  params: {location:query, categories: query2 }} );
   },
-    // Gets all articles
-    getLocations: function() {
-      return axios.get("/bookmarks");
-    },
+    // // Gets all articles
+    // getLocations: function() {
+    //   return axios.get("/bookmarks");
+    // },
     // Gets the bookmark with the given id
-    getLocation: function(id) {
-      console.log(id);
-      return axios.get("/bookmarks/" + id);
-    },
+    // getLocation: function(id) {
+    //   console.log(id);
+    //   return axios.get("api/bookmarks/" + id);
+    // },
     // Deletes the book with the given id
     deleteLocation: function(id) {
-      return axios.delete("/bookmarks/" + id);
+      return axios.delete("/bookmarksApi/" + id);
     },
     // Saves a book to the database
     saveLocation: function(bookData) {
       console.log("RECORD SAVED --> ", bookData)
-      return axios.post("/bookmarks", bookData);
+      return axios.post("/bookmarksApi", bookData);
+    },
+    getBookmarks: function(){
+      console.log("TEST TEST TEST")
+      return axios.get('/bookmarksApi');
     }
 };
 

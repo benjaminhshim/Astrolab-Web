@@ -19,26 +19,7 @@ class LayersItem extends Component {
     // }
 
 
-    fireUpYelpSearch = event => {
 
-        console.log('this is layers checked log');
-
-        API.getCategoriesLocations("los angeles", this.props.id)
-            .then(res => {
-                // this.setState({ yelpResults: res.data });
-                console.log("this is the Yelp data -->>", res.data);
-                // this.setState({lat: this.state.yelpResults[0].coordinates.latitude, 
-                //     lon: res.data[0].coordinates.longitude
-
-                // })
-                // this.props.onSearchLocation(this.state.search, this.state.location, this.state.lat, this.state.lon, res.data); //--> FIRES UP A PROP f(x) to send the search query to the map
-
-                // console.log("coodinates -->", this.state.lat, this.state.lon, res.data)
-            })
-            .catch(err => console.log(err));
-
-        //   this.setState({search: '', location: ''});
-    };
 
     render() {
         return (
