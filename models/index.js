@@ -1,5 +1,5 @@
 module.exports = {
-  Location: require("./bookmark"),
+  Bookmark: require("./bookmark"),
   User: require("./user")
 };
 
