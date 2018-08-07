@@ -9,7 +9,7 @@ const getPixelPositionOffset = (width, height) => ({
     y: -(height / 2),
 })
 
-class Map extends Component {
+class StreetView extends Component {
 
     render() {
 
@@ -65,6 +65,6 @@ class Map extends Component {
         );
     }
 };
-export default Map;
+export default StreetView;
 
 

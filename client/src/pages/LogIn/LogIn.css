@@ -1,9 +1,17 @@
+
+@font-face {
+    font-family: 'Futura-PT-Book';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Futura-PT-Book'), url('../../assets/fonts/futura-pt-book.ttf') format('truetype');
+}
+
 .log-in-body {
 
     background: linear-gradient(to bottom right, #7C3CC5, #582D88);
     height: 100vh;
     padding-top: 75px;
-    font-family: "Futura";
+    font-family: "Futura-PT-Book";
 }
 
 #astrolab-logo {
@@ -20,7 +28,8 @@
 
 #log-in-header {
     color: #FFFFFE;
-    margin-top: 20px;
+    margin-top: 40px;
+    font-size: 20pt;
     letter-spacing: 1px;
     font-family: "Futura";
     text-align: center;
@@ -40,6 +49,7 @@
 
 .log-in-body form {
     margin-top: 50px;
+    letter-spacing: 1px;
 }
 
 .log-in-body form input {
@@ -52,6 +62,8 @@
     width: 100%;
     margin-top: 20px;
     color: #fffffe;
+    letter-spacing: 1px;
+    border-bottom: 1px solid #fffffe;
 }
 
 .log-in-body form input:focus {
@@ -71,5 +83,4 @@
 
 #checkbox input {
     margin-top: 0px !important;
-
 }

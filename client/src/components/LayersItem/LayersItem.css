@@ -1,3 +1,26 @@
 input[type=checkbox] {
-    zoom: 1.5;
+    /* border: none;
+    background: purple;
+    -webkit-appearance: button;
+    zoom: 10;
+    border: 1px solid #fffffe; */
+    margin-right: -20px;
+}
+
+@font-face {
+    font-family: 'Futura-PT-Book';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Futura-PT-Book'), url('../../assets/fonts/futura-pt-book.ttf') format('truetype');
+}
+
+
+.layers-item h1 {
+    font-family: 'Futura-PT-Book';
+    font-size: 14pt;
+    letter-spacing: 1px;
+}
+
+.layers-item img {
+    width: 20px;
 }

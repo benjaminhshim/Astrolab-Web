@@ -6,15 +6,16 @@ import {
 
 
 
-class Map2 extends Component {
+class MapView extends Component {
+
 
     render() {
-
-        const GoogleMapExample2  = compose(
+        console.log(this.props.yelpResults);
+        const GoogleMapExample2 = compose(
             withProps({
               googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyBLABLHosCgujr2vQuUKO-c0d4oEmMx35o&v=3.exp&libraries=geometry,drawing,places",
               loadingElement: <div style={{ height: `100%` }} />,
-              containerElement: <div style={{ height: `400px` }} />,
+              containerElement: <div className="embed-responsive-item center d-block mt-5" id='google-maps-display' frameBorder="0" style={{ height: `575px`, width: '450px' }} />,
               mapElement: <div style={{ height: `100%` }} />,
             }),
             withState('zoom', 'onZoomChange', 8),
@@ -22,7 +23,6 @@ class Map2 extends Component {
               const refs = {
                 map: undefined,
               }
-          
               return {
                 onMapMounted: () => ref => {
                   refs.map = ref
@@ -39,20 +39,22 @@ class Map2 extends Component {
             <GoogleMap
               defaultCenter={ {lat: this.props.lat, lng: this.props.lon } || { lat: 34.032744, lng: -118.419917 }}
               zoom={14}
+              width="450"
+              height="575"              
               ref={props.onMapMounted}
               onZoomChanged={props.onZoomChanged}
               panorama={props.getStreetView}
             >
-            {this.props.yelpResults.map(i => (
-                    
-                <Marker
-                    position={{ lat: i.coordinates.latitude, lng: i.coordinates.longitude }}
-                    label={i.name}
-                    onClick={console.log("yo yo ", i.name)}
-                    
-                />
-                // <ExploreItem name={i.name} icon={i.categories[0].title} />
-                ))}
+              {this.props.yelpResults.map(j => (
+                      
+                  <Marker
+                      position={{ lat: j.coordinates.latitude, lng: j.coordinates.longitude }}                      
+                      title={j.id}
+                      key={j.alias}
+                      onClick={() => this.props.onMarkerClick(j)}
+                  />
+                  // <ExploreItem name={i.name} icon={i.categories[0].title} />
+              ))}
             </GoogleMap>
 
 
@@ -60,12 +62,11 @@ class Map2 extends Component {
 
         return (
             <div>
-                <GoogleMapExample2
-                />
+                <GoogleMapExample2/>
             </div>
         );
     }
 };
-export default Map2;
+export default MapView;
 
 

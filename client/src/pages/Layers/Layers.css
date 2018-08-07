@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'Futura-PT-Book';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Futura-PT-Book'), url('../../assets/fonts/futura-pt-book.ttf') format('truetype');
+}
+
 .layers-body {
     height: 100%;
     height: 100vh;
@@ -10,16 +17,21 @@
 
 #layers-header {
     font-family: Futura;
-    font-size: 24px;
+    font-size: 20pt;
     letter-spacing: 2px;
     margin-top: 50px;
 }
 
 #layers-subheader {
     margin-top: -10px;
+    font-family: 'Futura-PT-Book';
+    font-weight: 0;
+    font-size: 14pt;
+    letter-spacing: 1px;
 }
 
-/* .layers-body main {
-    border: 1px solid white;
-    padding: 20px;
-} */
+.layers-body main {
+    padding: 0px 40px;
+    margin-top: -20px;
+}
+

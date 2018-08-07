@@ -9,7 +9,54 @@
 
 #home-header {
     font-family: Futura;
-    font-size: 24px;
+    font-size: 20pt;
     letter-spacing: 1px;
     margin-top: 50px;
+}
+
+#home-modal .modal-content {
+    background: linear-gradient(to bottom right, #1D72CF, #1B60AD) !important;
+
+    border: 1px solid #FFFFFE !important;
+    border-radius: 10px !important;
+    box-shadow: 0px 1px 3px 1px darkgray !important;
+}
+
+#home-modal-header {
+    text-align: center;
+}
+
+#home-modal-header h5 {
+    margin-bottom: 20px;
+
+}
+
+#home-modal-header p {
+    font-size: 16px;
+    line-height: 0.5;
+}
+
+#home-modal-open-btn {
+    border-radius: 20px;
+    color: #1D72CF;
+    font-size: 16px;
+    padding: 3px 20px;
+}
+
+#home-modal-action-div {
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-around;
+}
+
+#home-modal-action-div img{
+    width: 33%;
+    height: 40%;
+    margin-bottom: 15px;
+}
+
+.home-modal-action-btn {
+    display: inline-block;
+    margin-left: 20px;
+    margin-right: 20px;
 }

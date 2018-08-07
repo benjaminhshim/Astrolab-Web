@@ -1,0 +1,31 @@
+@font-face {
+    font-family: 'Futura-PT-Book';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Futura-PT-Book'), url('../../assets/fonts/futura-pt-book.ttf') format('truetype');
+}
+
+#log-out-btn {
+    border-radius: 20px;
+    padding: 5px 20px;
+    background: transparent;
+    border: 1px solid #fffffe;
+    color: #fffffe;
+    float: none;
+    margin: 40px auto;
+    display: block;
+    font-family: "Futura-PT-Book";
+    font-size: 14pt;
+    letter-spacing: 1px;
+}
+
+#log-out-btn:focus {
+    text-decoration: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.profile-settings-body {
+    clear: both;
+    overflow: auto;
+}
