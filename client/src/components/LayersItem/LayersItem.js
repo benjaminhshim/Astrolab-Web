@@ -1,42 +1,41 @@
 import React, { Component } from 'react';
+import API from "../../utils/API"
 class LayersItem extends Component {
-constructor(props) {
-    super(props);
-    this.state = {
-        isGoing: true,
-        numberOfGuests: 2
-    };
 
-    this.handleInputChange = this.handleInputChange.bind(this);
-}
+        // this.handleInputChange = this.handleInputChange.bind(this);
+    
 
-handleInputChange(event) {
-    const target = event.target;
-    const value = target.type === 'checkbox' ? target.checked : target.value;
-    const name = target.name;
+    // handleInputChange(event) {
+    //     const target = event.target;
+    //     console.log("this is the event target -->" , event.target)
+    //     const value = target.type === 'checkbox' ? target.checked : target.value;
+    //     const name = target.name;
 
-    this.setState({
-        [name]: value
-    });
-    this.fireUpYelpSearch(event);
-}
- fireUpYelpSearch = event => {
-        // When the form is submitted, prevent its default behavior
-        // event.preventDefault();
+    //     this.setState({
+    //         [name]: value
+    //     });
+    //     console.log(this.state.isGoing)
+
+    // }
+
+
+    fireUpYelpSearch = event => {
+
         console.log('this is layers checked log');
 
-        // API.getCategoriesLocations(this.state.location, this.state.search)
-        //     .then(res => {
-        //         this.setState({ yelpResults: res.data });
-        //         this.setState({lat: this.state.yelpResults[0].coordinates.latitude, 
-        //             lon: res.data[0].coordinates.longitude
+        API.getCategoriesLocations("los angeles", this.props.id)
+            .then(res => {
+                // this.setState({ yelpResults: res.data });
+                console.log("this is the Yelp data -->>", res.data);
+                // this.setState({lat: this.state.yelpResults[0].coordinates.latitude, 
+                //     lon: res.data[0].coordinates.longitude
 
-        //         })
-        //         this.props.onSearchLocation(this.state.search, this.state.location, this.state.lat, this.state.lon, res.data); //--> FIRES UP A PROP f(x) to send the search query to the map
+                // })
+                // this.props.onSearchLocation(this.state.search, this.state.location, this.state.lat, this.state.lon, res.data); //--> FIRES UP A PROP f(x) to send the search query to the map
 
-        //         console.log("coodinates -->", this.state.lat, this.state.lon, res.data)
-        //     })
-        //     .catch(err => console.log(err));
+                // console.log("coodinates -->", this.state.lat, this.state.lon, res.data)
+            })
+            .catch(err => console.log(err));
 
         //   this.setState({search: '', location: ''});
     };
@@ -47,13 +46,11 @@ handleInputChange(event) {
 
                 <div className="dtc w2 w3-ns v-mid">
                     <input className="mr1"
-                        name="isGoing"
+                        name={[this.props.title]}
+                        // yelpCats={this.props.id[this.props.title]}
                         type="checkbox"
-                        checked={this.state.isGoing}
-                        onChange={this.handleInputChange}
-                        
-                        
-                         />
+                        onChange={this.props.balls}
+                    />
                 </div>
 
                 <div className="dtc v-mid pl3">

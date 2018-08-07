@@ -11,7 +11,7 @@ import SignUp from './pages/SignUp';
 import LogIn from './pages/LogIn';
 // import { isThisMonth } from 'date-fns';
 import axios from 'axios';
-
+import API from "./utils/API"
 import ProfileSettings from './pages/Profile-Pages/ProfileSettings';
 import Notifications from './pages/Profile-Pages/Notifications';
 import ReviewHistory from './pages/Profile-Pages/ReviewHistory';
@@ -28,6 +28,7 @@ class AppContainer extends Component {
     this.state = {
         searchResults: [],
         locationResults: [],
+
         loggedIn: '',
         username: null,
         redirectTo: null,

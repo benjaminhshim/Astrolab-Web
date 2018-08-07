@@ -25,6 +25,13 @@ class Home extends Component {
                     lat={this.props.googleMapsLat}
                     lon={this.props.googleMapsLon}
                     yelpResults={this.props.yelpResults} />
+            </div>
+        )
+    }
+}
+
+export default Home;
+
                 {/* {/{this.props.googleMapsResult}+${this.props.googleMapsLocation}`} */}
                 {/* <iframe 
                     id="google-maps-display"
@@ -38,10 +45,3 @@ class Home extends Component {
                     title="Google Maps">
 
                 </iframe> */}
-
-            </div>
-        )
-    }
-}
-
-export default Home;
