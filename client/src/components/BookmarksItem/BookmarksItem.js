@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import './BookmarksItem.css';
 class BookmarksItem extends Component {
     render() {
@@ -10,9 +10,16 @@ class BookmarksItem extends Component {
                 </div>
 
                 <div className="dtc v-mid tr">
-                    <img className="f6 h-10 b--black-10 dim pointer pv1 black-60" src={this.props.icon} alt=""/>
+                    <img className="f6 h-10 b--black-10 dim pointer pv1 black-60" src={this.props.icon} alt="" />
+                    <img alt=""
+                        id="home-modal-save-btn"
+                        src='/assets/images/AstrolabIconImages/BookmarksFilledMainNav.png'
+                        style={{ width: "20px!important" }}
+                        onClick={() => this.saveItem(this.props.markerResults)} />
+                    <p>Delete</p>
+
                 </div>
-                
+
             </article>
         )
     }

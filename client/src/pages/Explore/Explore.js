@@ -8,6 +8,9 @@ import layersList from '../Layers/layers.json';
 import exploreList from '../Explore/explore.json';
 import API from "../../utils/API";
 import axios from 'axios';
+
+
+
 class Explore extends Component {
     state = {
         search: "",
@@ -20,7 +23,7 @@ class Explore extends Component {
         results: [],
         yelpResults: [],
         categoryIcon: ''
-    };
+            };
     // END state declaration, BEGIN FUNCTIONS
     // componentDidMount() {
     //     this.setState({
@@ -52,7 +55,7 @@ class Explore extends Component {
                 })
                 this.props.onSearchLocation(this.state.search, this.state.location, this.state.lat, this.state.lon, res.data); //--> FIRES UP A PROP f(x) to send the search query to the map
 
-                console.log("coodinates -->", this.state.lat, this.state.lon, res.data)
+                // console.log("coodinates -->", this.state.lat, this.state.lon, res.data)
             })
             .catch(err => console.log(err));
 
@@ -63,7 +66,6 @@ class Explore extends Component {
     toggleModal = () => {
         this.setState({ modal: !this.state.modal });
     };
-
 
     // BEGIN RENDERING 
 
@@ -233,6 +235,7 @@ class Explore extends Component {
                                 icon={searchIcon} 
                                 bookmarkData={i}
                                 bookmarkThis={this.bookmarkThis}
+                                onMarkerClick={this.onMarkerClick}
                                 />
                         ))}
                     </main>
