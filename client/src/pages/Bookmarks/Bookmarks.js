@@ -82,7 +82,7 @@ class Bookmarks extends Component {
                 </form>
 
                 <div>
-                    <main className="mw6 center">
+                    <main className="mw6 center bookmark-results">
                         {this.state.results.map(i => (
                             <BookmarksItem
                                 name={i.name}

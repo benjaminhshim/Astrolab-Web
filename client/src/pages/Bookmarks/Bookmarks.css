@@ -17,3 +17,22 @@
 #bookmarks-search:focus {
     outline: none;
 }
+
+.bookmark-results {
+    height: 500px;
+    overflow: scroll;
+    -ms-scroll-translation: inherit;
+    /* position: absolute; 
+    width:100%;
+    left: 50%;
+    right: 50%; */
+}
+
+::-webkit-scrollbar {
+    background-color: transparent;
+    display: none;
+  }
+  ::-webkit-scrollbar-track {
+    display: none;
+}
+
