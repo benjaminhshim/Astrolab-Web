@@ -1,9 +1,33 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import './ExploreItem.css';
+import axios from 'axios';
+
 
 class ExploreItem extends Component {
+
+    state = {
+        selectedMarker: [],
+        name: ""
+    }
+
+
+    saveItem = data => {
+        console.log(data)
+        axios.post('/bookmarksApi', {
+            name: data,
+            alias: "data.alias",
+            image_url: "TEST"
+            
+        }).then(res => {
+            console.log(res);
+        }).catch(err => {
+            console.log(err);
+        })
+    }
+
+    
     render() {
-        
+
         return (
             <article className="dt w-100 b--black-05 pb2 mt3 explore-item" href="#0">
 
@@ -12,17 +36,22 @@ class ExploreItem extends Component {
                 </div>
 
                 <div className="dtc v-mid tr">
-                    <img 
-                        className="f6 h-10 b--black-10 dim pointer pv1 black-60" 
-                        src={this.props.icon} 
-                        onClick={() => this.props.bookmarkThis(this.props.bookmarkData)}
-                        // alt={this.props.icon}
-                        />
+                    <img className="f6 h-10 b--black-10 dim pointer pv1 black-60" src={this.props.icon} alt="" 
+                     onClick={() => this.saveItem(this.props.name)} 
+                    />
+                    {/* <img alt=""
+                        id="home-modal-save-btn"
+                        src='/assets/images/AstrolabIconImages/BookmarksFilledMainNav.png'
+                        style={{ width: "20px!important" }}
+                        // onClick={() => this.saveItem(this.props.name)} 
+                        /> */}
+                    <p>Add</p>
                 </div>
-                
+
             </article>
         )
     }
 }
 
 export default ExploreItem;
+

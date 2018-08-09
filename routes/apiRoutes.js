@@ -19,16 +19,19 @@ router.get('/hello', (req, res) => {
   //   term: 'UCLA Bootcamp',
   //   location: 'los angeles, ca'
   // };
-  console.log("this is the search req", searchRequest)
-  console.log("this is the search req", req.query)
+  // console.log("this is the search req", searchRequest)
+  // console.log("this is the search req", req.query)
 
 
   // 1st YELP CALL FROM BACK END ---->>>
 
   client.search(searchRequest).then(response => {
 
-    console.log("express", response.jsonBody.businesses)
-    console.log("additional yelp stuff -->", response.jsonBody)
+    // console.log("express", response.jsonBody.businesses)
+    console.log("additional yelp stuff ")
+    // , response.jsonBody)
+
+
     res.send(response.jsonBody.businesses)
   }).catch(e => {
     console.log(e);
