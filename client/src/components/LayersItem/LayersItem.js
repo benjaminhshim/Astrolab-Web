@@ -3,21 +3,7 @@ import API from "../../utils/API"
 import './LayersItem.css';
 class LayersItem extends Component {
 
-        // this.handleInputChange = this.handleInputChange.bind(this);
-    
-
-    // handleInputChange(event) {
-    //     const target = event.target;
-    //     console.log("this is the event target -->" , event.target)
-    //     const value = target.type === 'checkbox' ? target.checked : target.value;
-    //     const name = target.name;
-
-    //     this.setState({
-    //         [name]: value
-    //     });
-    //     console.log(this.state.isGoing)
-
-    // }
+   
 
 
 
