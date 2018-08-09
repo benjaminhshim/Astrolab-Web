@@ -41,13 +41,15 @@ class ExploreItem extends Component {
                 </div>
 
                 <div className="dtc v-mid tr">
-                    <img className="f6 h-10 b--black-10 dim pointer pv1 black-60" src={this.props.icon} alt="" />
-                    <img alt=""
+                    <img className="f6 h-10 b--black-10 dim pointer pv1 black-60" src={this.props.icon} alt="" 
+                     onClick={() => this.saveItem(this.props.name)} 
+                    />
+                    {/* <img alt=""
                         id="home-modal-save-btn"
                         src='/assets/images/AstrolabIconImages/BookmarksFilledMainNav.png'
                         style={{ width: "20px!important" }}
-                        onClick={() => this.saveItem(this.props.name)} 
-                        />
+                        // onClick={() => this.saveItem(this.props.name)} 
+                        /> */}
                     <p>Add</p>
                 </div>
 
