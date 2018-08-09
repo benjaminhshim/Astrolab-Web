@@ -10,11 +10,6 @@ class ExploreItem extends Component {
         name: ""
     }
 
-    // onMarkerClick = data => {
-    //     console.log("THIS IS THE DATA YA BISHHHH")
-    //     console.log(data)
-    //     this.setState({selectedMarker: data});
-    // }
 
     saveItem = data => {
         console.log(data)
