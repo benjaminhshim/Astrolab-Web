@@ -12,7 +12,7 @@ import LogIn from './pages/LogIn';
 
 // import { isThisMonth } from 'date-fns';
 import axios from 'axios';
-
+import API from "./utils/API"
 import ProfileSettings from './pages/Profile-Pages/ProfileSettings';
 import Notifications from './pages/Profile-Pages/Notifications';
 import ReviewHistory from './pages/Profile-Pages/ReviewHistory';
@@ -31,6 +31,7 @@ class AppContainer extends Component {
     this.state = {
         searchResults: [],
         locationResults: [],
+        categorySearch:"",
         loggedIn: '',
         username: null,
         redirectTo: null,
@@ -106,6 +107,9 @@ class AppContainer extends Component {
       console.log(data);
   }
 
+setCategories = categories => {
+    this.setState({categorySearch: categories})
+}
 
   render() {
 
@@ -132,7 +136,10 @@ class AppContainer extends Component {
                         />
                     <Route 
                         path="/layers" 
-                        component={Layers} />
+                        component={Layers}
+                        categories={this.state.categorySearch}
+                        passCategoriesUp={this.setCategories}
+                         />
                     <Route 
                         path="/explore" 
                         render={props => <Explore {...props} 
