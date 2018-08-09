@@ -20,9 +20,12 @@
     display: block;
     text-align: center;
     margin: 0 auto;
-    width: auto !important;
+    /* width: auto !important; */
+    width: 200px;
     clear: both;
     overflow: auto;
     margin-top: 40px;
-    height: auto;
+    /* height: auto; */
+    height: 100%;
+    border: 1px solid red;
 }
