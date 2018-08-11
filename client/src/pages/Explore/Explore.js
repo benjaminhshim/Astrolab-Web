@@ -103,6 +103,8 @@ class Explore extends Component {
             case 'transportation':
                 searchIcon = '../../assets/images/AstrolabIconImages/Transpo.png';
                 break;
+            default: 
+                searchIcon = '../../assets/images/AstrolabIconImages/General.png';
         }
 
 
@@ -246,6 +248,7 @@ class Explore extends Component {
                                         yelpResults={this.props.yelpResults}
                                         bookmarkArray={this.props.bookmarkArray}
                                         faded={this.state.faded}
+                                        categoryIcon={this.props.categoryIcon}
                                     />
                                 :
                                     <ExploreItem 
@@ -259,7 +262,8 @@ class Explore extends Component {
                                         isBookmarked={this.props.isBookmarked}
                                         yelpResults={this.props.yelpResults}
                                         bookmarkArray={this.props.bookmarkArray}
-                                        
+                                        categoryIcon={this.props.categoryIcon}
+
                                     />                                
                                 
                             ))}
