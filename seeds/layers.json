@@ -2,7 +2,7 @@
         "myId": 0,
         "title": "Bars",
         "icon": "/assets/images/AstrolabIconImages/Bars.png",
-        "categories": ["bars", "barcrawl", "lounges", "beergardens", "pianobars","poolhalls", "beerhall", "beerbar", "tapas", "gastropubs", "cocktailbars", "wine_bars" ],
+        "categories": ["bars", "barcrawl", "beergardens", "pianobars", "beerhall", "tapas"],
         "isChecked": false
     },
     {
@@ -16,7 +16,7 @@
         "myId": 2,
         "title": "General",
         "icon": "../../assets/images/AstrolabIconImages/General.png",
-        "categories": ["eventplanning", "coffee", "landmarks", "restaurants", "parks", "hardware", "nightlife", "taxis", "towncarservice", "limos"],
+        "categories": ["bars", "coffee", "landmarks", "restaurants", "parks", "hardware", "nightlife", "taxis", "towncarservice", "limos"],
         "isChecked": false
 
 
@@ -52,7 +52,7 @@
         "myId": 6,
         "title": "Nightlife",
         "icon": "../../assets/images/AstrolabIconImages/Disco.png",
-        "categories": ["nightlife", "venues" ],
+        "categories": ["nightlife"],
         "isChecked": false
 
 
@@ -62,7 +62,7 @@
         "myId": 7,
         "title": "Restaurants",
         "icon": "../../assets/images/AstrolabIconImages/Fork.png",
-        "categories": ["restaurants", "italian", "pizza", "tacos", "breakfast_brunch", "newamerican", "korean", "bbq", "tapas", "hotdog", "dimsum", "tapasmallplates, japanese", "sushi"],
+        "categories": ["restaurants"],
         "isChecked": false
 
 

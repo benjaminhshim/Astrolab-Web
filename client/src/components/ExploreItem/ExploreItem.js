@@ -30,6 +30,10 @@ class ExploreItem extends Component {
 
     
     render() {
+        let myId = this.props.catAlias
+        console.log("myid-->", myId)
+
+
         
         return (
             <div>
@@ -41,7 +45,7 @@ class ExploreItem extends Component {
                         </div>
                         <div className="dtc v-mid tr">
                             <img className="f6 h-10 b--black-10 dim pointer pv1 black-60" 
-                                src={this.props.icon} alt="" 
+                               src={this.props.generatePic} alt={myId}
                                 onClick={() => this.saveItem(this.props.name)} />
                         </div>
                     </article>
@@ -54,7 +58,7 @@ class ExploreItem extends Component {
                         </div>
                         <div className="dtc v-mid tr">
                             <img className="f6 h-10 b--black-10 dim pointer pv1 black-60" 
-                                src={this.props.icon} alt="" 
+                                src={this.props.generatePic} alt={myId} 
                                 onClick={() => this.saveItem(this.props.name)} />
                         </div>
                     </article>
