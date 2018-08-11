@@ -1,8 +1,6 @@
 # Astrolab (Web)
 
 # Introduction
-Astrolab is a web scraping application built with Node.js, Express.js, Handlebars, MongoDB & Mongoose. Scrapebeast uses **cheerio** to scrape data from [Hypebeast](http://www.hypebeast.com), displays multiple articles to the user, gives the user the option to save and unsave articles and also lets the user post and delete notes for each article.
-
 Astrolab is an interactive web app built with React.js, Node.js, Express.js, MongoDB & Mongoose. Astrolab empowers users to interactively explore their environment by surfacing relevant, real-time information about what’s around them. By leveraging existing technologies, Astrolab looks to provide interactive displays for surrounding businesses.
 
 # Setup
