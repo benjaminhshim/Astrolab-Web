@@ -26,64 +26,6 @@ import LogOut from './pages/Profile-Pages/LogOut';
 import './App.css';
 
 class AppContainer extends Component {
-<<<<<<< HEAD
-    constructor(props) {
-        super(props);
-        this.state = {
-            searchResults: [],
-            locationResults: [],
-            categorySearch: "",
-            loggedIn: '',
-            username: null,
-            redirectTo: null,
-            yelpResults: [],
-            myLat: "",
-            myLon: "",
-            selectedLocation: false,
-            markerData: ''
-        }
-    }
-
-    componentDidMount() {
-        //   this.setState({searchResults: 'Physics Astronomy', locationResults: 'UCLA'});
-        this.getUser();
-        console.log(this.state.loggedIn);
-        console.log(this.state.username);
-        //   this.searchLocation('coffee', 'los angeles', 34.060116, -118.291278, []);
-    }
-
-    updateUser = (loggedIn, username, redirectTo) => {
-        this.setState({
-            loggedIn,
-            username,
-            redirectTo
-        });
-    }
-
-    getUser = () => {
-        axios.get('/api/users').then(res => {
-            console.log('get user response: ');
-            console.log(res.data);
-            if (res.data.user) {
-                console.log('get user there is a user saved in the server session: ');
-
-                this.setState({
-                    loggedIn: true,
-                    username: res.data.user.username
-                })
-            } else {
-                console.log('get user: no user');
-                this.setState({
-                    loggedIn: false,
-                    username: null
-                })
-            }
-        })
-    }
-
-    searchLocation = (search, location, lat, lon, yelpResults) => {
-        console.log("these are the search parameters -->", search, lat, location, lon)
-=======
   constructor(props) {
     super(props);
     this.state = {
@@ -156,7 +98,6 @@ class AppContainer extends Component {
 
   searchLocation = (search, location, lat, lon, yelpResults) => {
       console.log("these are the search parameters -->", search, lat, location, lon)
->>>>>>> master
         this.setState({
             searchResults: search,
             locationResults: location,
@@ -186,9 +127,6 @@ class AppContainer extends Component {
         this.setState({ categorySearch: categories })
     }
 
-<<<<<<< HEAD
-    render() {
-=======
 setCategoryIcon = icon => {
     this.setState({categoryIcon: icon})
 }
@@ -203,24 +141,16 @@ fadeBookmark = data => {
 
 
   render() {
->>>>>>> master
 
         return (
             <Router>
                 <div>
-<<<<<<< HEAD
-                    <Route
-                        path="/home"
-                        render={props => <Home {...props}
-                            googleMapsLat={this.state.myLat} googleMapsLon={this.state.myLon} googleMapsResult={this.state.searchResults}
-=======
                     <Route 
                         path="/home"                 
                         render={props => <Home {...props} 
                             googleMapsLat={this.state.myLat}
                             googleMapsLon={this.state.myLon}
                             googleMapsResult={this.state.searchResults}  
->>>>>>> master
                             googleMapsLocation={this.state.locationResults}
                             yelpResults={this.state.yelpResults}
                             selectedLocation={this.state.selectedLocation}
@@ -228,30 +158,12 @@ fadeBookmark = data => {
                             markerClick={this.markerClick}
                             setMarkerModal={this.setMarkerData}
                             markerResults={this.state.markerData}
-<<<<<<< HEAD
-                        // resultsName={this.state.yelpResults[0].name}
-                        // resultsAddress1={this.state.yelpResults[0].display_address[0]}
-                        // resultsAddress2={this.state.yelpResults[0].display_address[1]}
-                        // resultsAddress3={this.state.yelpResults[0].display_address[2]}
-=======
->>>>>>> master
                         />}
 
                     />
                     <Route
                         path="/layers"
                         component={Layers}
-<<<<<<< HEAD
-
-                    />
-                    <Route
-                        path="/explore"
-                        render={props => <Explore {...props}
-                            onSearchLocation={this.searchLocation} />}
-                    />
-                    <Route
-                        path="/bookmarks"
-=======
                         categories={this.state.categorySearch}
                         passCategoriesUp={this.setCategories}
                          />
@@ -267,7 +179,6 @@ fadeBookmark = data => {
                         />
                     <Route 
                         path="/bookmarks" 
->>>>>>> master
                         component={Bookmarks} />
                     <Route
                         exact path="/profile"

@@ -22,22 +22,9 @@ class Explore extends Component {
         exploreList,
         results: [],
         yelpResults: [],
-<<<<<<< HEAD
-        categoryAlias: '',
-        icon:""
-            };
-    // END state declaration, BEGIN FUNCTIONS
-    // componentDidMount() {
-    //     this.setState({
-    //         search: 'coffee',
-    //         location: 'los angeles'
-    //     })
-    // }
-=======
         categoryIcon: '',
         faded: 'bookmarked'
     };
->>>>>>> master
 
     handleInputChange = event => {
         const { name, value } = event.target;
@@ -49,14 +36,9 @@ class Explore extends Component {
     handleFormSubmit = event => {
         // When the form is submitted, prevent its default behavior
         event.preventDefault();
-<<<<<<< HEAD
-        // this.setState({categoryAlias: this.state.search})
-// icon logic to be applied prior to passing it in
-=======
         // this.setState({categoryIcon: this.state.search})
         this.props.setCategoryIcon(this.state.search);
 
->>>>>>> master
         API.getYelpLocations(this.state.location, this.state.search)
             .then(res => {
                 this.setState({ yelpResults: res.data });
@@ -77,7 +59,6 @@ class Explore extends Component {
         //   this.setState({search: '', location: ''});
     };
 
-<<<<<<< HEAD
 
     handlePicChange = (alias) => {
         // const { name, value } = event.target;
@@ -148,8 +129,6 @@ class Explore extends Component {
 
 
     //MODAL 
-=======
->>>>>>> master
     toggleModal = () => {
         this.setState({ modal: !this.state.modal });
     };
@@ -163,7 +142,6 @@ class Explore extends Component {
 
 
     render() {
-<<<<<<< HEAD
 
 
 
@@ -200,42 +178,6 @@ class Explore extends Component {
         //         searchIcon = '../../assets/images/AstrolabIconImages/Transpo.png';
         //         break;
         // }
-=======
-        let searchIcon = '';
-
-        switch(this.props.categoryIcon) {
-            case 'bars':
-                searchIcon = '../../assets/images/AstrolabIconImages/Bars.png';
-                break;
-            case 'cafe':
-                searchIcon = '../../assets/images/AstrolabIconImages/Cafe.png';
-                break;
-            case 'general':
-                searchIcon = '../../assets/images/AstrolabIconImages/General.png';
-                break;
-            case 'home':
-                searchIcon = '../../assets/images/AstrolabIconImages/Hammer.png';
-                break;
-            case 'landmark':
-                searchIcon = '../../assets/images/AstrolabIconImages/Landmark.png';
-                break;
-            case 'nature':
-                searchIcon = '../../assets/images/AstrolabIconImages/MtnFlag.png';
-                break;
-            case 'club':
-                searchIcon = '../../assets/images/AstrolabIconImages/Disco.png';
-                break;
-            case 'restaurant':
-                searchIcon = '../../assets/images/AstrolabIconImages/Fork.png';
-                break;
-            case 'retail':
-                searchIcon = '../../assets/images/AstrolabIconImages/Retail.png';
-                break;
-            case 'transportation':
-                searchIcon = '../../assets/images/AstrolabIconImages/Transpo.png';
-                break;
-        }
->>>>>>> master
 
 
         return (
@@ -362,25 +304,6 @@ class Explore extends Component {
                     <button style={{ visibility: "hidden" }}>submit</button>
                 </form>
 
-<<<<<<< HEAD
-
-                <div style={{position:"relative"}}>
-                    <main className="mw6 center search-results">
-                        {this.state.yelpResults.map(i => (
-                            <ExploreItem 
-                                name={i.name} 
-                                key={i.alias}
-                                catAlias={this.state.categoryAlias}
-                                icon={this.state.icon} 
-                                bookmarkData={i}
-                                bookmarkThis={this.bookmarkThis}
-                                onMarkerClick={this.onMarkerClick}
-                                generatePic={this.handlePicChange(this.state.categoryAlias)}
-                                />
-                        ))}
-                    </main>
-                </div>
-=======
                 {this.props.yelpResults.length > 0 &&
                     <div style={{position:"relative"}}>
                         <main className="mw6 center search-results">
@@ -389,11 +312,12 @@ class Explore extends Component {
                                     <ExploreItem 
                                         name={i.name} 
                                         key={i.alias}
-                                        // icon={i.categories[0].title}
-                                        icon={searchIcon} 
+                                        catAlias={this.state.categoryAlias}
+                                        icon={this.state.icon} 
                                         bookmarkData={i}
                                         bookmarkThis={this.bookmarkThis}
                                         onMarkerClick={this.onMarkerClick}
+                                        generatePic={this.handlePicChange(this.state.categoryAlias)}
                                         isBookmarked={this.fadeBookmark}
                                         yelpResults={this.props.yelpResults}
                                         bookmarkArray={this.props.bookmarkArray}
@@ -403,10 +327,12 @@ class Explore extends Component {
                                     <ExploreItem 
                                         name={i.name} 
                                         key={i.alias}
-                                        // icon={i.categories[0].title}
-                                        icon={searchIcon} 
+                                        catAlias={this.state.categoryAlias}
+                                        icon={this.state.icon} 
                                         bookmarkData={i}
                                         bookmarkThis={this.bookmarkThis}
+                                        onMarkerClick={this.onMarkerClick}
+                                        generatePic={this.handlePicChange(this.state.categoryAlias)}
                                         onMarkerClick={this.onMarkerClick}
                                         isBookmarked={this.props.isBookmarked}
                                         yelpResults={this.props.yelpResults}
@@ -419,7 +345,6 @@ class Explore extends Component {
                     </div>
                 }
                 
->>>>>>> master
 
                 <div>{this.state.results}</div>
             </div>

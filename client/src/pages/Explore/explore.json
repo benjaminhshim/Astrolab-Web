@@ -62,7 +62,7 @@
     "myId": 7,
     "title": "Restaurants",
     "icon": "../../assets/images/AstrolabIconImages/Fork.png",
-    "categories": ["restaurants", "italian", "pizza", "tacos", "breakfast_brunch", "newamerican", "korean", "bbq", "tapas", "hotdog", "dimsum", "tapasmallplates", "sushi"],
+    "categories": ["restaurants", "italian", "pizza", "mexican", "tacos", "breakfast_brunch", "newamerican", "korean", "bbq", "tapas", "hotdog", "dimsum", "tapasmallplates", "sushi"],
     "isChecked": false
 
 
