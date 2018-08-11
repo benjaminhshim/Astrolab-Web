@@ -6,11 +6,11 @@ class LogInAccountButton extends Component {
     render() {
         return (
             <div id="log-in-account-btn-div">
-                <Link to="/log-in">
+                {/* <Link to="/log-in" className="log-in-link"> */}
                     <button 
                         id="log-in-account-btn"
-                        onClick={this.props.logIn}>Log in</button>
-                </Link>
+                        onClick={this.props.logIn}>Log In</button>
+                {/* </Link> */}
             </div>
         )
     }

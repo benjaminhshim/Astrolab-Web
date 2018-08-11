@@ -10,13 +10,14 @@ class MapView extends Component {
 
 
     render() {
-        console.log(this.props.yelpResults);
+        // console.log(this.props.yelpResults);
         const GoogleMapExample2 = compose(
             withProps({
               googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyBLABLHosCgujr2vQuUKO-c0d4oEmMx35o&v=3.exp&libraries=geometry,drawing,places",
               loadingElement: <div style={{ height: `100%` }} />,
-              containerElement: <div className="embed-responsive-item center d-block mt-5" id='google-maps-display' frameBorder="0" style={{ height: `575px`, width: '450px' }} />,
-              mapElement: <div style={{ height: `100%` }} />,
+              containerElement: <div className="embed-responsive-item center d-block mt-5" id='google-maps-display' frameBorder="0" style={{height: `575px`, 
+              width: '450px'}} />,
+              mapElement: <div style={styles.map} />,
             }),
             withState('zoom', 'onZoomChange', 8),
             withHandlers(() => {
@@ -67,6 +68,12 @@ class MapView extends Component {
         );
     }
 };
+
+const styles = {
+  map: { 
+    height: `100%`
+  }
+}
 export default MapView;
 
 

@@ -27,7 +27,7 @@ class Profile extends Component {
 
                 <main className="profile-settings-body mw6 center">
 
-                    <p id="settings-header">Settings</p>
+                    <p id="main-settings-header">Settings</p>
 
                     <ProfileNav 
                         updateUser={this.props.updateUser} 

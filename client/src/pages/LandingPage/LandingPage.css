@@ -14,18 +14,6 @@
     margin-top: 20px;
     letter-spacing: 1px;
     font-family: "Futura";
+    margin-bottom: 40px;
 }
 
-#landing-page-buttons {
-    display: block;
-    text-align: center;
-    margin: 0 auto;
-    /* width: auto !important; */
-    width: 200px;
-    clear: both;
-    overflow: auto;
-    margin-top: 40px;
-    /* height: auto; */
-    height: 100%;
-    border: 1px solid red;
-}

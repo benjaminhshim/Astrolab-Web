@@ -14,12 +14,12 @@ const Nav = () => (
     //     </div>
     // </nav>
 
-    <nav className="dt w-100 border-box pa3 ph5-ns tc" id="main-nav">
-        <div className=" v-mid center" >
-            <span><Link to="/home" className="link dib mr3 mr5-ns nav-item">Home</Link></span>
-            <span><Link to="/layers" className="link dib mr3 mr5-ns nav-item">Layers</Link></span>
-            <span ><Link to="/explore" className="link dib mr3 mr5-ns nav-item">Explore</Link></span>
-            <span><Link to="/bookmarks" className="link dib mr3 mr5-ns nav-item">Bookmarks</Link></span>
+    <nav className="dt w-100 border-box pa3 ph5-ns tc center" id="main-nav">
+        <div className=" v-mid center">
+            <span><Link to="/home" className="link dib m3 mr5-ns nav-item">Home</Link></span>
+            <span><Link to="/layers" className="link dib m3 mr5-ns nav-item">Layers</Link></span>
+            <span ><Link to="/explore" className="link dib m3 mr5-ns nav-item">Explore</Link></span>
+            <span><Link to="/bookmarks" className="link dib m3 mr5-ns nav-item">Bookmarks</Link></span>
             <span><Link to="/profile" className="link dib nav-item" >Profile</Link></span>
         </div>
     </nav>

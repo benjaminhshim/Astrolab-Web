@@ -39,16 +39,32 @@ class AppContainer extends Component {
         myLat:"", 
         myLon:"",
         selectedLocation: false,
-        markerData: ''
+        markerData: '',
+        categoryIcon: '',
+        bookmarkArray: []
     }
   }
 
   componentDidMount() {
-    //   this.setState({searchResults: 'Physics Astronomy', locationResults: 'UCLA'});
       this.getUser();
       console.log(this.state.loggedIn);
       console.log(this.state.username);
-    //   this.searchLocation('coffee', 'los angeles', 34.060116, -118.291278, []);
+    this.setState({
+        yelpResults: [
+            {
+                coordinates: {
+                    latitude: 34.070777,
+                    longitude: -118.441748
+                },
+                default_name: 'UCLA Physics and Astronomy Building',
+                address1: '475 Portola Plaza',
+                address2: 'Los Angeles, CA 90095'
+            }
+        ],
+        myLat: 34.070777, 
+        myLon: -118.441748, 
+        searchResults: 'UCLA', 
+        locationResults: 'UCLA Physics and Astronomy Building'})
   }
 
   updateUser = (loggedIn, username, redirectTo) => {
@@ -111,6 +127,19 @@ setCategories = categories => {
     this.setState({categorySearch: categories})
 }
 
+setCategoryIcon = icon => {
+    this.setState({categoryIcon: icon})
+}
+
+fadeBookmark = data => {
+    if (this.state.bookmarkArray.indexOf(data) === -1) {
+        this.setState({bookmarkArray: [...this.state.bookmarkArray, data]});
+    } else {
+        return this.state.bookmarkArray;
+    }
+}
+
+
   render() {
 
         return (
@@ -119,7 +148,9 @@ setCategories = categories => {
                     <Route 
                         path="/home"                 
                         render={props => <Home {...props} 
-                            googleMapsLat={this.state.myLat}googleMapsLon={this.state.myLon}googleMapsResult={this.state.searchResults}  
+                            googleMapsLat={this.state.myLat}
+                            googleMapsLon={this.state.myLon}
+                            googleMapsResult={this.state.searchResults}  
                             googleMapsLocation={this.state.locationResults}
                             yelpResults={this.state.yelpResults}
                             selectedLocation={this.state.selectedLocation}
@@ -127,10 +158,6 @@ setCategories = categories => {
                             markerClick={this.markerClick}
                             setMarkerModal={this.setMarkerData}
                             markerResults={this.state.markerData}
-                            // resultsName={this.state.yelpResults[0].name}
-                            // resultsAddress1={this.state.yelpResults[0].display_address[0]}
-                            // resultsAddress2={this.state.yelpResults[0].display_address[1]}
-                            // resultsAddress3={this.state.yelpResults[0].display_address[2]}
                         />}
 
                         />
@@ -143,7 +170,12 @@ setCategories = categories => {
                     <Route 
                         path="/explore" 
                         render={props => <Explore {...props} 
-                            onSearchLocation={this.searchLocation}/>}
+                            onSearchLocation={this.searchLocation}
+                            yelpResults={this.state.yelpResults}
+                            setCategoryIcon={this.setCategoryIcon}
+                            categoryIcon={this.state.categoryIcon}
+                            isBookmarked={this.fadeBookmark}
+                            bookmarkArray={this.state.bookmarkArray}/>}
                         />
                     <Route 
                         path="/bookmarks" 

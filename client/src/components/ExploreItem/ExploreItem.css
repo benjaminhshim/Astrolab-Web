@@ -1,28 +1,16 @@
 @font-face {
     font-family: 'Futura-PT-Book';
     font-style: normal;
-    font-weight: 0;
-    src:
-      local('futura-pt-book'),
-      url(../../assets/fonts/futura-pt-book.ttf) 
-      format('truetype'),
+    font-weight: normal;
+    src: local('Futura-PT-Book'), url('../../assets/fonts/futura-pt-book.ttf') format('truetype');
 }
-
-@font-face {
-    font-family: 'Titling';
-    font-style: normal;
-    font-weight: 0;
-    src:
-      local('built-titling-bd-it'),
-      url(../../assets/fonts/built-titling-bd-it.ttf) 
-      format('truetype'),
-}
-
 
 .explore-item img {
     width: 20px;
 }
 
-h1 {
-    font-family: 'Titling', !important;
+.explore-item h1 {
+    font-family: "Futura-PT-Book";
+    font-size: 14pt;
+    letter-spacing: 0.5px;
 }

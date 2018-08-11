@@ -41,6 +41,9 @@
 #home-modal-header p {
     font-size: 16px;
     line-height: 0.5;
+    font-family: "Futura-PT-Book";
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
 }
 
 #home-modal-open-btn {
@@ -49,6 +52,15 @@
     font-size: 16px;
     padding: 3px 20px;
 }
+
+#home-modal-open-btn:hover {
+    cursor: pointer;
+}
+
+#home-modal-open-btn:focus {
+    outline: none;
+}
+
 
 #home-modal-action-div {
     margin-top: 25px;
@@ -61,12 +73,17 @@
     width: 15px !important;
 }
 
+#home-modal-action-div img:hover {
+    cursor: pointer;
+}
+
 #home-modal-action-div img{
     /* width: 33%; */
     width: 25px;
     height: 25px;
     margin-bottom: 15px;
 }
+
 
 #home-modal-action-div div {
     /* border: 1px solid red; */

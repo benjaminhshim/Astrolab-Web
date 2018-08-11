@@ -23,3 +23,8 @@
 #log-in-account-btn-div {
     height: 50px;
 }
+
+
+.log-in-link:hover {
+    text-decoration: none;
+}

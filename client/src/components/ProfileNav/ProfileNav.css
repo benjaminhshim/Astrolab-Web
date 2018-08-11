@@ -1,8 +1,17 @@
+@font-face {
+    font-family: 'Futura-PT-Book';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Futura-PT-Book'), url('../../assets/fonts/futura-pt-book.ttf') format('truetype');
+}
+
 .profile-nav h1 {
     font-size: 24pt;
+    /* font-family: "Futura-PT-Book"; */
 }
 
 .profile-arrow {
     width: 10px !important;
 
 }
+

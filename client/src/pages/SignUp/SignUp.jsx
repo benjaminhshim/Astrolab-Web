@@ -80,46 +80,66 @@ class SignUp extends Component {
                             name="firstName"
                             value={this.state.firstName}
                             onChange={this.handleInputChange}
+                            autoComplete="off"
+                            onFocus={e => e.target.placeholder = ""} 
+                            onBlur={e => e.target.placeholder = "First name"}
                             placeholder="First name"/>
                         <input 
                             type="text" 
                             name="lastName"
                             value={this.state.lastName}
                             onChange={this.handleInputChange}
+                            autoComplete="off"
+                            onFocus={e => e.target.placeholder = ""} 
+                            onBlur={e => e.target.placeholder = "Last name"}
                             placeholder="Last name"/>
                         <input 
                             type="email" 
                             name="email"
                             value={this.state.email}
                             onChange={this.handleInputChange}
+                            autoComplete="off"
+                            onFocus={e => e.target.placeholder = ""} 
+                            onBlur={e => e.target.placeholder = "Email"}
                             placeholder="Email"/>
                         <input 
                             type="text" 
                             name="username"
                             value={this.state.username}
                             onChange={this.handleInputChange}
+                            autoComplete="off"
+                            onFocus={e => e.target.placeholder = ""} 
+                            onBlur={e => e.target.placeholder = "Username"}
                             placeholder="Username"/>
                         <input 
                             type="password" 
                             name="password"
                             value={this.state.password}
                             onChange={this.handleInputChange}
-                            placeholder="Password"
-                            />
+                            autoComplete="off"
+                            onFocus={e => e.target.placeholder = ""} 
+                            onBlur={e => e.target.placeholder = "Password"}
+                            placeholder="Password"/>
                         <input 
                             type="password" 
                             name="confirmPassword"
                             value={this.state.confirmPassword}
                             onChange={this.handleInputChange}
+                            autoComplete="off"
+                            onFocus={e => e.target.placeholder = ""} 
+                            onBlur={e => e.target.placeholder = "Confirm password"}
                             placeholder="Confirm password"/>
                         <input 
                             type="date" 
                             name="birthdate"
                             value={this.state.birthdate}
                             onChange={this.handleInputChange}
+                            autoComplete="off"
+                            onFocus={e => e.target.placeholder = ""} 
+                            onBlur={e => e.target.placeholder = "mm/dd/yy"}
                             placeholder="mm/dd/yy"/>
     
-                        <FormGroup 
+                        {/* <FormGroup 
                             check 
                             style={{marginTop: 35}}
                             id="checkbox">
@@ -129,7 +149,7 @@ class SignUp extends Component {
                                     />{' '}
                                 <p style={{color: "#FFFFFE"}}>Remember Me</p>
                             </Label>
-                        </FormGroup>
+                        </FormGroup> */}
     
                         <CreateAccountButton 
                             handleClick={this.handleCreateUser}/>

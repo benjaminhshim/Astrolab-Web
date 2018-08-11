@@ -24,3 +24,8 @@ input[type=checkbox] {
 .layers-item img {
     width: 20px;
 }
+
+.checkbox-div {
+    width: 8%;
+    margin: 0 auto;
+}
