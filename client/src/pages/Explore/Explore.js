@@ -22,7 +22,8 @@ class Explore extends Component {
         exploreList,
         results: [],
         yelpResults: [],
-        categoryIcon: ''
+        categoryAlias: '',
+        icon:""
             };
     // END state declaration, BEGIN FUNCTIONS
     // componentDidMount() {
@@ -39,28 +40,99 @@ class Explore extends Component {
         });
     };
 
-    // SUBMIT FORM 
-
     handleFormSubmit = event => {
         // When the form is submitted, prevent its default behavior
         event.preventDefault();
-        this.setState({categoryIcon: this.state.search})
-
+        // this.setState({categoryAlias: this.state.search})
+// icon logic to be applied prior to passing it in
         API.getYelpLocations(this.state.location, this.state.search)
             .then(res => {
                 this.setState({ yelpResults: res.data });
+                console.log(res.data)
                 this.setState({
                     lat: this.state.yelpResults[0].coordinates.latitude, 
-                    lon: res.data[0].coordinates.longitude
+                    lon: res.data[0].coordinates.longitude,
+                    categoryAlias: res.data[0].categories[0].alias
                 })
+
                 this.props.onSearchLocation(this.state.search, this.state.location, this.state.lat, this.state.lon, res.data); //--> FIRES UP A PROP f(x) to send the search query to the map
 
-                // console.log("coodinates -->", this.state.lat, this.state.lon, res.data)
+                console.log("coodinates -->", this.state.categoryAlias, this.state.lon, res.data)
+        
             })
             .catch(err => console.log(err));
 
         //   this.setState({search: '', location: ''});
     };
+
+
+    handlePicChange = (alias) => {
+        // const { name, value } = event.target;
+        let searchIcon = "";
+        
+        console.log("this is the log for render  -->", alias, layersList[7].categories.includes(alias), "<--")
+        if (layersList[0].categories.includes(alias)) 
+         {
+           return searchIcon = '../../assets/images/AstrolabIconImages/Bars.png';
+                // break;
+        } 
+        
+        else if (layersList[1].categories.includes(alias)) {
+            console.log("this is the log for render  -->", alias, layersList[1].categories.includes(alias), "<--")
+
+            return searchIcon = '../../assets/images/AstrolabIconImages/Cafe.png';
+            // break;
+        } 
+        else if (layersList[2].categories.includes(alias)) {
+            console.log("this is the log for render  -->", alias, layersList[2].categories.includes(alias), "<--")
+
+            return searchIcon = '../../assets/images/AstrolabIconImages/General.png';
+            // break;
+        } 
+        else if (layersList[3].categories.includes(alias)) {
+            return searchIcon = '../../assets/images/AstrolabIconImages/Hammer.png';
+            // break;
+        } 
+        else if (layersList[4].categories.includes(alias)) {
+            return searchIcon = '../../assets/images/AstrolabIconImages/Landmark.png';
+            // break;
+        } 
+        else if (layersList[5].categories.includes(alias)) {
+            console.log("this is the log for render  -->", alias, layersList[5].categories.includes(alias), "<--")
+
+            return searchIcon = '../../assets/images/AstrolabIconImages/MtnFlag.png';
+            // break;
+        } 
+        else if (layersList[6].categories.includes(alias)) {
+            return searchIcon = '../../assets/images/AstrolabIconImages/Disco.png';
+            // break;
+        } 
+        else if (layersList[7].categories.includes(alias)) {
+            console.log("this is the log for render  -->", alias, layersList[7].categories.includes(alias), "<--")
+
+            console.log("match restaurants")
+            searchIcon = layersList[7].icon;
+           return searchIcon
+            // break;
+        } 
+        else if (layersList[8].categories.includes(alias)) {
+            return searchIcon = '../../assets/images/AstrolabIconImages/Retail.png';
+            // break;
+        } 
+        else if (layersList[9].categories.includes(alias)) {
+            console.log("this is the log for render  -->", alias, layersList[9].categories.includes(alias), "<--")
+
+            return searchIcon = '../../assets/images/AstrolabIconImages/Transpo.png';
+            // break;
+        } 
+        else {
+            return searchIcon = '../../assets/images/AstrolabIconImages/General.png';
+        }
+
+    };
+    // SUBMIT FORM 
+
+
 
     //MODAL 
     toggleModal = () => {
@@ -71,40 +143,42 @@ class Explore extends Component {
 
 
     render() {
-        let searchIcon = '';
 
-        switch(this.state.categoryIcon) {
-            case 'bars':
-                searchIcon = '../../assets/images/AstrolabIconImages/Bars.png';
-                break;
-            case 'cafe':
-                searchIcon = '../../assets/images/AstrolabIconImages/Cafe.png';
-                break;
-            case 'general':
-                searchIcon = '../../assets/images/AstrolabIconImages/General.png';
-                break;
-            case 'home':
-                searchIcon = '../../assets/images/AstrolabIconImages/Hammer.png';
-                break;
-            case 'landmark':
-                searchIcon = '../../assets/images/AstrolabIconImages/Landmark.png';
-                break;
-            case 'nature':
-                searchIcon = '../../assets/images/AstrolabIconImages/MtnFlag.png';
-                break;
-            case 'club':
-                searchIcon = '../../assets/images/AstrolabIconImages/Disco.png';
-                break;
-            case 'restaurant':
-                searchIcon = '../../assets/images/AstrolabIconImages/Fork.png';
-                break;
-            case 'retail':
-                searchIcon = '../../assets/images/AstrolabIconImages/Retail.png';
-                break;
-            case 'transportation':
-                searchIcon = '../../assets/images/AstrolabIconImages/Transpo.png';
-                break;
-        }
+
+
+
+        // switch(this.state.categoryAlias) {
+        //     case (layersList[0].categories.includes(this.state.categoryAlias)):
+        //         searchIcon = '../../assets/images/AstrolabIconImages/Bars.png';
+        //         break;
+        //     case 'cafe':
+        //         searchIcon = '../../assets/images/AstrolabIconImages/Cafe.png';
+        //         break;
+        //     case 'general':
+        //         searchIcon = '../../assets/images/AstrolabIconImages/General.png';
+        //         break;
+        //     case 'home':
+        //         searchIcon = '../../assets/images/AstrolabIconImages/Hammer.png';
+        //         break;
+        //     case 'landmark':
+        //         searchIcon = '../../assets/images/AstrolabIconImages/Landmark.png';
+        //         break;
+        //     case 'nature':
+        //         searchIcon = '../../assets/images/AstrolabIconImages/MtnFlag.png';
+        //         break;
+        //     case 'club':
+        //         searchIcon = '../../assets/images/AstrolabIconImages/Disco.png';
+        //         break;
+        //     case 'restaurant':
+        //         searchIcon = '../../assets/images/AstrolabIconImages/Fork.png';
+        //         break;
+        //     case 'retail':
+        //         searchIcon = '../../assets/images/AstrolabIconImages/Retail.png';
+        //         break;
+        //     case 'transportation':
+        //         searchIcon = '../../assets/images/AstrolabIconImages/Transpo.png';
+        //         break;
+        // }
 
 
         return (
@@ -168,6 +242,7 @@ class Explore extends Component {
                                 <button
                                     className="f6 link ph3 pv2 mb2 dib white bg-black"
                                     id="explore-btn-abc">
+
                                     Alphabetical
                                 </button>
                                 <button
@@ -231,11 +306,12 @@ class Explore extends Component {
                             <ExploreItem 
                                 name={i.name} 
                                 key={i.alias}
-                                // icon={i.categories[0].title}
-                                icon={searchIcon} 
+                                catAlias={this.state.categoryAlias}
+                                icon={this.state.icon} 
                                 bookmarkData={i}
                                 bookmarkThis={this.bookmarkThis}
                                 onMarkerClick={this.onMarkerClick}
+                                generatePic={this.handlePicChange(this.state.categoryAlias)}
                                 />
                         ))}
                     </main>

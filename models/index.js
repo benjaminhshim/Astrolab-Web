@@ -1,5 +1,6 @@
 module.exports = {
   Bookmark: require("./bookmark"),
-  User: require("./user")
+  User: require("./user"),
+  Layers: require("./layers")
 };
 

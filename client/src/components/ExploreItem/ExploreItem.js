@@ -27,6 +27,8 @@ class ExploreItem extends Component {
 
     
     render() {
+        let myId = this.props.catAlias
+        console.log("myid-->", myId)
 
         return (
             <article className="dt w-100 b--black-05 pb2 mt3 explore-item" href="#0">
@@ -36,7 +38,7 @@ class ExploreItem extends Component {
                 </div>
 
                 <div className="dtc v-mid tr">
-                    <img className="f6 h-10 b--black-10 dim pointer pv1 black-60" src={this.props.icon} alt="" 
+                    <img className="f6 h-10 b--black-10 dim pointer pv1 black-60" src={this.props.generatePic} alt={myId}
                      onClick={() => this.saveItem(this.props.name)} 
                     />
                     {/* <img alt=""

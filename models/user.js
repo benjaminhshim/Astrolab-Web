@@ -17,7 +17,6 @@ const userSchema = new Schema({
     },
   username: 
     {
-
         type: String,
         min: [1, 'Too few characters'],
         max: 100,
@@ -44,6 +43,10 @@ const userSchema = new Schema({
         {
             type: Array 
         }
+    //, layers:
+    // {
+    //     type: Array
+    // } --> if we added the layers as a save option for the user
 });
 
 userSchema.methods = {

@@ -16,7 +16,7 @@ export default {
   },
   getYelpLocations: function(query, query2) {
     console.log("this isthe API log ", query, query2)
-    return axios.get("/hello", {  params: {location:query, categories: query2 }} );
+    return axios.get("/hello", {  params: {location:query, term: query2 }} );
   },
 
   getCategoriesLocations: function(query, query2) {
