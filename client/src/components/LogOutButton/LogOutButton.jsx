@@ -4,10 +4,11 @@ import './LogOutButton.css';
 export default class LogOutButton extends Component {
   render() {
     return (
-      <div>
+      <div id="log-out-btn-div">
         <button 
             onClick={this.props.logOut}
-            id="log-out-btn">Log Out</button>
+            id="log-out-btn"
+            className="grow center">Log Out</button>
       </div>
     )
   }

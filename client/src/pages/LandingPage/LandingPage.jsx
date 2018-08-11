@@ -18,7 +18,8 @@ class LandingPage extends Component {
 
                 <h2 className="tc" id="landing-page-header">ASTROLAB</h2>
 
-                <div id="landing-page-buttons">
+
+                <div className="landing-page-buttons tc pb3">
                     <SignUpButton />
                     <LogInButton />
                 </div>

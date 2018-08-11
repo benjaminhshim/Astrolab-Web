@@ -1,3 +1,20 @@
+@font-face {
+    font-family: 'Futura-PT-Book';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Futura-PT-Book'), url('../../assets/fonts/futura-pt-book.ttf') format('truetype');
+}
+
+.bookmarks-item {
+    margin-bottom: 20px;
+}
+
 .bookmarks-item img {
     width: 20px;
+}
+
+.bookmarks-item h1 {
+    font-family: "Futura-PT-Book";
+    font-size: 14pt;
+    letter-spacing: 0.5px;
 }

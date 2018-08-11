@@ -6,7 +6,7 @@ import './LogInButton.css';
 class LogInButton extends Component {
     render() {
         return (
-            <div>
+            <div className="f6 f5-ns dib">
                 <Link to="/login">
                     <button id="log-in-btn">Log in</button>
                 </Link>

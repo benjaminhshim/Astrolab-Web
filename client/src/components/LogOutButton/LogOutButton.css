@@ -19,9 +19,14 @@
     letter-spacing: 1px;
 }
 
+
 #log-out-btn:focus {
     text-decoration: none;
     outline: none;
+    cursor: pointer;
+}
+
+#log-out-btn:hover {
     cursor: pointer;
 }
 

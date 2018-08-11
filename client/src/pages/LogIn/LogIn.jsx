@@ -72,16 +72,22 @@ class LogIn extends Component {
                             name="username"
                             value={this.state.username}
                             onChange={this.handleInputChange}
+                            autoComplete="off"
+                            onFocus={e => e.target.placeholder = ""} 
+                            onBlur={e => e.target.placeholder = "Username"}
                             placeholder="Username"/>
                         <input 
                             type="password" 
                             name="password"
                             value={this.state.password}
                             onChange={this.handleInputChange}
+                            autoComplete="off"
+                            onFocus={e => e.target.placeholder = ""} 
+                            onBlur={e => e.target.placeholder = "Password"}
                             placeholder="Password"
                             />
     
-                        <FormGroup 
+                        {/* <FormGroup 
                             check 
                             style={{marginTop: 35}}
                             id="checkbox">
@@ -91,9 +97,14 @@ class LogIn extends Component {
                                     />{' '}
                                 <p style={{color: "#FFFFFE"}}>Remember Me</p>
                             </Label>
-                        </FormGroup>
+                        </FormGroup> */}
     
-                        <p style={{textAlign: "center", color: "#FFFFFE", marginBottom: 35}}>Forgot Password?</p>
+                        <p 
+                            id="forgot-password" 
+                            className="pointer" 
+                            style={{textAlign: "center", color: "#FFFFFE", marginTop: 20, marginBottom: 35}}>
+                                Forgot Password?
+                        </p>
     
                         <LogInAccountButton
                             logIn={this.handleLogIn}/>

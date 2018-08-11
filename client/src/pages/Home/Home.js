@@ -40,68 +40,81 @@ class Home extends Component {
     }
 
     render() {
-
-        // console.log('results: ', this.props);
         if (this.state.redirectTo === "bookmarks") {
             return <Redirect to={{pathname: "/bookmarks"}} />
         } else {
-            if (this.props.yelpResults.length === 0) {
+            if (this.props.yelpResults.length === 1) {
                 return (
                     <div className="home-body">
-                    
                         <Nav />
                         <p className="tc" id="home-header">Home</p>
-                        
+                        <MapView
+                            search={this.props.googleMapsResult}
+                            location={this.props.googleMapsLocation}
+                            lat={this.props.googleMapsLat}
+                            lon={this.props.googleMapsLon}
+                            yelpResults={this.props.yelpResults} 
+                            onMarkerClick={this.onMarkerClick}/>
+
                         <div>
                             <Modal
                                 isOpen={this.state.modal}
                                 toggle={this.toggleModal}
                                 className={this.props.className}
-                                id="home-modal"
-                            >
+                                id="home-modal">
                                 <ModalHeader>
                                     <div id="home-modal-header">
-                                        <h5>Name</h5>
+                                        <h5>{this.props.yelpResults[0].default_name}</h5>
                                         <div id="home-modal-address">
-                                            <p>
-                                                <span>Address Line 1</span>
-                                                <span>Address Line 2</span>
-                                            </p>
+                                       
+                                            <div>
+                                                <p>
+                                                    {this.props.yelpResults[0].address1}
+                                                </p>
+                                                <p>
+                                                    {this.props.yelpResults[0].address2}
+                                                </p>
+                                               
+                                            </div>
+                                        
                                     
-                                            <p>Address Line 3</p>
                                         </div>
-                                        <button id="home-modal-open-btn">Open</button>
+                                        <button id="home-modal-open-btn" className="grow" style={{marginTop: '15px'}}>Open</button>
                                         <div id="home-modal-action-div">
                                             <div className="home-modal-action-btn">
                                                 <img alt=""
                                                     id="home-modal-save-btn" 
+                                                    className="grow" 
                                                     src='/assets/images/AstrolabIconImages/BookmarksFilledMainNav.png'
-                                                    style={{width: "20px!important"}}/>
+                                                    style={{width: "15px!important"}}/>
                                                 <p>Save</p>
                                             </div>
                                             <div className="home-modal-action-btn">
                                             <img alt=""
                                                 id="home-modal-call-btn" 
+                                                className="grow" 
                                                 src='/assets/images/AstrolabIconImages/Call.png'/>
                                                 <p>Call</p>
                                             </div>
                                             <div className="home-modal-action-btn">
                                             <img alt=""
                                                 id="home-modal-review-btn" 
+                                                className="grow" 
                                                 src='/assets/images/AstrolabIconImages/AddReview.png'/>
                                                 <p>Review</p>
                                             </div>
                                             <div className="home-modal-action-btn">
                                             <img alt=""
                                                 id="home-modal-directions-btn" 
+                                                className="grow" 
                                                 src='/assets/images/AstrolabIconImages/Directions.png'/>
-                                                <p>Direction</p>
+                                                <p>Directions</p>
                                             </div>
                                         </div>
                                     </div>
         
                                 </ModalHeader>
-                                <ModalBody>
+                                {/* <ModalBody>
                                     <div>
                                         <p>Reviews</p>
                                         <p>* * * * * </p>
@@ -114,25 +127,12 @@ class Home extends Component {
         
                                     <br />
         
+                                    <br />
+        
                                    
-                                </ModalBody>
+                                </ModalBody> */}
                             </Modal>
                         </div>
-        
-                    
-                        {/* {/{this.props.googleMapsResult}+${this.props.googleMapsLocation}`} */}
-                        {/* <iframe 
-                            id="google-maps-display"
-                            width="450"
-                            height="575"
-                            frameBorder="0" 
-                            style={{border:0}} 
-                            className="embed-responsive-item center d-block mt-5"
-                            src={`https://www.google.com/maps/embed/v1/search?key=AIzaSyBhSBjmU-q9Jf9qFxhho_cfQjWwo2aJcYs&zoom=14&q=${this.props.googleMapsResult}+${this.props.googleMapsLocation}`}
-                            allowFullScreen
-                            title="Google Maps">
-        
-                        </iframe> */}
         
                     </div>
                 )
@@ -184,15 +184,19 @@ class Home extends Component {
                                                 <p>
                                                     {this.props.markerResults.location.display_address[1]}
                                                 </p>
+                                                <p>
+                                                    {this.props.markerResults.display_phone}
+                                                </p>
                                             </div>
                                         }
                                     
                                         </div>
-                                        <button id="home-modal-open-btn" style={{marginTop: '15px'}}>Open</button>
+                                        <button id="home-modal-open-btn" className="grow" style={{marginTop: '15px'}}>Open</button>
                                         <div id="home-modal-action-div">
                                             <div className="home-modal-action-btn">
                                                 <img alt=""
                                                     id="home-modal-save-btn" 
+                                                    className="grow" 
                                                     src='/assets/images/AstrolabIconImages/BookmarksFilledMainNav.png'
                                                     style={{width: "15px!important"}}
                                                     onClick={() => {this.saveItem(this.props.markerResults); this.setState({redirectTo: 'bookmarks'})}}/>
@@ -201,20 +205,23 @@ class Home extends Component {
                                             <div className="home-modal-action-btn">
                                             <img alt=""
                                                 id="home-modal-call-btn" 
+                                                className="grow" 
                                                 src='/assets/images/AstrolabIconImages/Call.png'/>
                                                 <p>Call</p>
                                             </div>
                                             <div className="home-modal-action-btn">
                                             <img alt=""
                                                 id="home-modal-review-btn" 
+                                                className="grow" 
                                                 src='/assets/images/AstrolabIconImages/AddReview.png'/>
                                                 <p>Review</p>
                                             </div>
                                             <div className="home-modal-action-btn">
                                             <img alt=""
                                                 id="home-modal-directions-btn" 
+                                                className="grow" 
                                                 src='/assets/images/AstrolabIconImages/Directions.png'/>
-                                                <p>Direction</p>
+                                                <p>Directions</p>
                                             </div>
                                         </div>
                                     </div>
@@ -239,21 +246,6 @@ class Home extends Component {
                                 </ModalBody> */}
                             </Modal>
                         </div>
-        
-                    
-                        {/* {/{this.props.googleMapsResult}+${this.props.googleMapsLocation}`} */}
-                        {/* <iframe 
-                            id="google-maps-display"
-                            width="450"
-                            height="575"
-                            frameBorder="0" 
-                            style={{border:0}} 
-                            className="embed-responsive-item center d-block mt-5"
-                            src={`https://www.google.com/maps/embed/v1/search?key=AIzaSyBhSBjmU-q9Jf9qFxhho_cfQjWwo2aJcYs&zoom=14&q=${this.props.googleMapsResult}+${this.props.googleMapsLocation}`}
-                            allowFullScreen
-                            title="Google Maps">
-        
-                        </iframe> */}
         
                     </div>
                 )

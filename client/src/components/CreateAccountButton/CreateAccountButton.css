@@ -5,24 +5,22 @@
     font-family: "Futura";
     box-shadow: 0 2px 6px -1px black;
     float: none;
-    margin: 0 auto;
-    margin-top: 20px;
+    /* margin: 0 auto; */
+    margin-top: 35px;
     display: block;
-
 }
 
 #create-account-btn:hover {
     cursor: pointer;
     text-decoration: none;
-
+    outline: none;
 }
 
 
-#create-account-btn:focus {
-    outline: none;
+.create-account-btn-link:hover {
+    text-decoration: none;
 }
 
 #create-account-btn-div {
     height: 50px;
-
 }

@@ -1,7 +1,11 @@
 .bookmarks-nav {
-    width: 30%;
-    margin-top: 40px;
+    width: auto;
+    margin-top: 30px;
     border: 1px solid white;
     border-radius: 10px;
     font-family: Futura;
+}
+
+.bookmarks-nav div {
+    padding: 10px 25px;
 }

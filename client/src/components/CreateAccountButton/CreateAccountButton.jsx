@@ -7,9 +7,10 @@ class CreateAccountButton extends Component {
     render() {
         return (
             <div id="create-account-btn-div">
-                <Link to="/home">
+                <Link to="/home" className="create-account-btn-link">
                     <button 
                         id="create-account-btn"
+                        className="center"
                         onClick={this.props.handleClick}>
                         Create Account
                     </button>

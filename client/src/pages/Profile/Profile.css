@@ -14,6 +14,8 @@
     font-family: Futura;
 }
 
+
+
 #profile-username {
     font-family: Futura;
     font-size: 20pt;
@@ -34,10 +36,14 @@
 
 }
 
-#settings-header {
+#main-settings-header {
     font-size: 20pt;
     /* float: left; */
-    margin-bottom: 0px;
+    margin-bottom: -5px;
+}
+
+#settings-header {
+    font-size: 20pt;
 }
 
 .profile-nav a {
@@ -45,8 +51,6 @@
     font-size: 12pt;
 }
 
-.profile-body main {
-    padding: 0px 40px;
-    clear: both;
-    overflow: auto;
+.profile-settings-body {
+    padding: 0px 20px;
 }
