@@ -30,8 +30,8 @@ class ExploreItem extends Component {
 
     
     render() {
-        
         return (
+            
             <div>
                 {this.props.faded === 'bookmarked' ?
                     <article style={{opacity: 0.5}} className="dt w-100 b--black-05 pb2 mt3 explore-item" href="#0">
@@ -40,9 +40,17 @@ class ExploreItem extends Component {
                             <h1 className="f6 f5-ns lh-title mv0">{this.props.name} </h1>
                         </div>
                         <div className="dtc v-mid tr">
+                        {this.props.categoryIcon.length > 0 ? 
                             <img className="f6 h-10 b--black-10 dim pointer pv1 black-60" 
                                 src={this.props.icon} alt="" 
                                 onClick={() => this.saveItem(this.props.name)} />
+                        :
+                            <img className="f6 h-10 b--black-10 dim pointer pv1 black-60 dn" 
+                                src={this.props.icon} alt="" 
+                                onClick={() => this.saveItem(this.props.name)} />
+                        }
+                            
+
                         </div>
                     </article>
 
@@ -53,9 +61,15 @@ class ExploreItem extends Component {
                             <h1 className="f6 f5-ns lh-title mv0">{this.props.name} </h1>
                         </div>
                         <div className="dtc v-mid tr">
+                        {this.props.categoryIcon.length > 0 ? 
                             <img className="f6 h-10 b--black-10 dim pointer pv1 black-60" 
                                 src={this.props.icon} alt="" 
                                 onClick={() => this.saveItem(this.props.name)} />
+                        :
+                            <img className="f6 h-10 b--black-10 dim pointer pv1 black-60 dn" 
+                                src={this.props.icon} alt="" 
+                                onClick={() => this.saveItem(this.props.name)} />
+                        }
                         </div>
                     </article>
                 }
