@@ -42,8 +42,14 @@ export default {
       return axios.post("/bookmarksApi", bookData);
     },
     getBookmarks: function(){
-      console.log("TEST TEST TEST")
+      // console.log("TEST TEST TEST")
       return axios.get('/bookmarksApi');
+    },
+    findBookmark: function(id) {
+      return axios.get('/bookmarksApi/bookmarks/' + id)
+    },
+    deleteBookmark: function(id) {
+      return axios.delete('/bookmarksApi/bookmarks/' + id);
     }
 };
 

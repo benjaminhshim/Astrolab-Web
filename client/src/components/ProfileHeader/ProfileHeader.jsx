@@ -13,7 +13,7 @@ class ProfileHeader extends Component {
                     }
 
                     <p className="tc" id="profile-current-city">Los Angeles</p>
-                    <p className="tc" id="profile-date">August 8, 2018</p>
+                    <p className="tc" id="profile-date">August 11, 2018</p>
                 </div>
             </div> 
         )

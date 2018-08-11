@@ -11,7 +11,7 @@ class LayersItem extends Component {
         return (
             <article className="dt w-100 b--black-05 pb2 mt3 layers-item" href="#0">
 
-                <div className="dtc w2 w3-ns v-mid">
+                <div className="dtc w2 w3-ns v-mid checkbox-div">
                     <input className="mr1"
                         name={[this.props.title, this.props.myId]}
                         checked={this.props.isChecked}

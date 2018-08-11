@@ -22,6 +22,7 @@ class Explore extends Component {
         exploreList,
         results: [],
         yelpResults: [],
+<<<<<<< HEAD
         categoryAlias: '',
         icon:""
             };
@@ -32,6 +33,11 @@ class Explore extends Component {
     //         location: 'los angeles'
     //     })
     // }
+=======
+        categoryIcon: '',
+        faded: 'bookmarked'
+    };
+>>>>>>> master
 
     handleInputChange = event => {
         const { name, value } = event.target;
@@ -43,8 +49,14 @@ class Explore extends Component {
     handleFormSubmit = event => {
         // When the form is submitted, prevent its default behavior
         event.preventDefault();
+<<<<<<< HEAD
         // this.setState({categoryAlias: this.state.search})
 // icon logic to be applied prior to passing it in
+=======
+        // this.setState({categoryIcon: this.state.search})
+        this.props.setCategoryIcon(this.state.search);
+
+>>>>>>> master
         API.getYelpLocations(this.state.location, this.state.search)
             .then(res => {
                 this.setState({ yelpResults: res.data });
@@ -65,6 +77,7 @@ class Explore extends Component {
         //   this.setState({search: '', location: ''});
     };
 
+<<<<<<< HEAD
 
     handlePicChange = (alias) => {
         // const { name, value } = event.target;
@@ -135,14 +148,22 @@ class Explore extends Component {
 
 
     //MODAL 
+=======
+>>>>>>> master
     toggleModal = () => {
         this.setState({ modal: !this.state.modal });
     };
 
-    // BEGIN RENDERING 
+    fadeBookmark = data => {
+        if (this.state.bookmarkArray.indexOf(data) === -1) {
+            this.setState({bookmarkArray: [...this.state.bookmarkArray, data]})
+
+        }
+    }
 
 
     render() {
+<<<<<<< HEAD
 
 
 
@@ -179,19 +200,55 @@ class Explore extends Component {
         //         searchIcon = '../../assets/images/AstrolabIconImages/Transpo.png';
         //         break;
         // }
+=======
+        let searchIcon = '';
+
+        switch(this.props.categoryIcon) {
+            case 'bars':
+                searchIcon = '../../assets/images/AstrolabIconImages/Bars.png';
+                break;
+            case 'cafe':
+                searchIcon = '../../assets/images/AstrolabIconImages/Cafe.png';
+                break;
+            case 'general':
+                searchIcon = '../../assets/images/AstrolabIconImages/General.png';
+                break;
+            case 'home':
+                searchIcon = '../../assets/images/AstrolabIconImages/Hammer.png';
+                break;
+            case 'landmark':
+                searchIcon = '../../assets/images/AstrolabIconImages/Landmark.png';
+                break;
+            case 'nature':
+                searchIcon = '../../assets/images/AstrolabIconImages/MtnFlag.png';
+                break;
+            case 'club':
+                searchIcon = '../../assets/images/AstrolabIconImages/Disco.png';
+                break;
+            case 'restaurant':
+                searchIcon = '../../assets/images/AstrolabIconImages/Fork.png';
+                break;
+            case 'retail':
+                searchIcon = '../../assets/images/AstrolabIconImages/Retail.png';
+                break;
+            case 'transportation':
+                searchIcon = '../../assets/images/AstrolabIconImages/Transpo.png';
+                break;
+        }
+>>>>>>> master
 
 
         return (
             <div className="explore-body">
                 <Nav />
-                <div className="relative">
+                <div className=" explore-header-div">
                     <p className="tc" id="explore-header">Search</p>
                     <img  
                         src='/assets/images/AstrolabIconImages/FilterMapImg.png'
                         alt=""
 
                         id="explore-filter"
-                        className="fr w2 h2 absolute top-0"
+                        className="fr w2 h2 grow top-0"
                         onClick={this.toggleModal}
                     />
                 </div>
@@ -210,12 +267,12 @@ class Explore extends Component {
                                 alt=""
 
                                 id="explore-filter-active"
-                                className="fr w2 h2 absolute top-0"
+                                className="fr w2 h2 absolute grow top-0"
                                 onClick={this.toggleModal}
                             />
                         </ModalHeader>
                         <ModalBody>
-                            <div>
+                            {/* <div>
                                 <p>Slide to set search distance</p>
                                 <img 
                                     src='/assets/images/AstrolabIconImages/ExploreSliderTrack.png'
@@ -235,25 +292,25 @@ class Explore extends Component {
                             </div>
 
                             <br />
-                            <br />
+                            <br /> */}
 
                             <div>
                                 <p>Sort by</p>
                                 <button
-                                    className="f6 link ph3 pv2 mb2 dib white bg-black"
+                                    className="f6 link ph3 pv2 mb2 dib white bg-black grow"
                                     id="explore-btn-abc">
 
                                     Alphabetical
                                 </button>
                                 <button
-                                    className="f6 link ph3 pv2 mb2 dib white bg-black"
+                                    className="f6 link ph3 pv2 mb2 dib white bg-black grow"
                                     id="explore-btn-closest">
                                     Closest
                                 </button>
                             </div>
 
                             <br />
-
+                
                             <div>
                                 <p>Select layers to display</p>
                                 <p id="map-match">Match map layers</p>
@@ -283,6 +340,9 @@ class Explore extends Component {
                             placeholder="Search"
                             value={this.state.search}
                             name="search"
+                            autoComplete="off"
+                            onFocus={e => e.target.placeholder = ""} 
+                            onBlur={e => e.target.placeholder = "Search"}
                             onChange={this.handleInputChange}
                         />
                         <input
@@ -292,6 +352,9 @@ class Explore extends Component {
                             placeholder="Current Location"
                             value={this.state.location}
                             name="location"
+                            autoComplete="off"
+                            onFocus={e => e.target.placeholder = ""} 
+                            onBlur={e => e.target.placeholder = "Current Location"}
                             onChange={this.handleInputChange}
                         />
                         {/* this would be a good place to execute Yelp API Autocomplete */}
@@ -299,6 +362,7 @@ class Explore extends Component {
                     <button style={{ visibility: "hidden" }}>submit</button>
                 </form>
 
+<<<<<<< HEAD
 
                 <div style={{position:"relative"}}>
                     <main className="mw6 center search-results">
@@ -316,6 +380,46 @@ class Explore extends Component {
                         ))}
                     </main>
                 </div>
+=======
+                {this.props.yelpResults.length > 0 &&
+                    <div style={{position:"relative"}}>
+                        <main className="mw6 center search-results">
+                            {this.props.yelpResults.map(i => (
+                                this.props.bookmarkArray.includes(i.name) ?
+                                    <ExploreItem 
+                                        name={i.name} 
+                                        key={i.alias}
+                                        // icon={i.categories[0].title}
+                                        icon={searchIcon} 
+                                        bookmarkData={i}
+                                        bookmarkThis={this.bookmarkThis}
+                                        onMarkerClick={this.onMarkerClick}
+                                        isBookmarked={this.fadeBookmark}
+                                        yelpResults={this.props.yelpResults}
+                                        bookmarkArray={this.props.bookmarkArray}
+                                        faded={this.state.faded}
+                                    />
+                                :
+                                    <ExploreItem 
+                                        name={i.name} 
+                                        key={i.alias}
+                                        // icon={i.categories[0].title}
+                                        icon={searchIcon} 
+                                        bookmarkData={i}
+                                        bookmarkThis={this.bookmarkThis}
+                                        onMarkerClick={this.onMarkerClick}
+                                        isBookmarked={this.props.isBookmarked}
+                                        yelpResults={this.props.yelpResults}
+                                        bookmarkArray={this.props.bookmarkArray}
+                                        
+                                    />                                
+                                
+                            ))}
+                        </main>
+                    </div>
+                }
+                
+>>>>>>> master
 
                 <div>{this.state.results}</div>
             </div>

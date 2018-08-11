@@ -37,7 +37,7 @@ class LogOut extends Component {
 
                 <main className="profile-settings-body mw6 center">
 
-                    <p id="settings-header">Log Out</p>
+                    {/* <p id="settings-header">Log Out</p> */}
                     <LogOutButton 
                         logOut={this.logOut}/>
 

@@ -21,6 +21,7 @@
     font-size: 20pt;
     letter-spacing: 1px;
     margin-top: 50px;
+    margin-bottom: -15px;
 }
 
 #explore-search,
@@ -40,8 +41,22 @@
     color: #FFFFFE;
 }
 
+.explore-header-div {
+    clear: both;
+    overflow: auto;
+    width: 500px;
+    margin: 0 auto;
+    margin-bottom: -10px;
+}
+
 #explore-filter {
-    right: 17.5em;
+    /* right: 17.5em; */
+    margin-top: -22px;
+    margin-right: 12px;
+}
+
+#explore-filter:hover {
+    cursor: pointer;
 }
 
 /* MODAL */
@@ -89,6 +104,10 @@
 #explore-filter-active {
     right: -0.2em;
     top: -0.2em;
+}
+
+#explore-filter-active:hover {
+    cursor: pointer;
 }
 
 #explore-slider {
@@ -144,6 +163,8 @@
     height: 500px;
     overflow: scroll;
     -ms-scroll-translation: inherit;
+    margin-top: -40px;
+    padding-right: 15px;
     /* position: absolute; 
     width:100%;
     left: 50%;
@@ -157,4 +178,3 @@
   ::-webkit-scrollbar-track {
     display: none;
 }
-
